@@ -12,6 +12,8 @@ GetDirectoryFiles -> pointer needs allocation?
 drawLineStrip -> pointer?
 drawTriangleFan -> pointer?
 checkCollisionLines -> pointer?
+getImageAlphaBorder -> uses Rectangle!
+line 1243
 "
 Class {
 	#name : #Raylib,
@@ -530,9 +532,85 @@ Raylib class >> endVrStereoMode [
 ]
 
 { #category : #'ffi-calls' }
+Raylib class >> exportImage: image fileName: fileName [
+
+	^ self ffiCall:
+		  #( bool ExportImage #( Image image , const char * fileName ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> exportImageAsCode: image fileName: fileName [
+
+	^ self ffiCall:
+		  #( bool ExportImageAsCode #( Image image , const char * fileName ) )
+]
+
+{ #category : #'ffi-calls' }
 Raylib class >> fileExists: fileName [
 
 	^ self ffiCall: #( bool FileExists #( const char * fileName ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageCellular: width height: height tileSize: tileSize [
+
+	^ self ffiCall:
+		  #( Image GenImageCellular #( int width , int height , int tileSize ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageChecked: width height: height checksX: checksX checksY: checksY col1: col1 col2: col2 [
+
+	^ self ffiCall:
+		  #( Image GenImageChecked #( int width , int height , int checksX
+		        , int checksY , Color col1 , Color col2 ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageColor: width height: height color: color [
+
+	^ self ffiCall:
+		  #( Image GenImageColor #( int width , int height , Color color ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageGradientH: width height: height left: left right: right [
+
+	^ self ffiCall:
+		  #( Image GenImageGradientH #( int width , int height , Color left
+		        , Color right ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageGradientRadial: width height: height density: density inner: inner outer: outer [
+
+	^ self ffiCall:
+		  #( Image GenImageGradientRadial #( int width , int height , float
+		        density , Color inner , Color outer ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageGradientV: width height: height top: top bottom: bottom [
+
+	^ self ffiCall:
+		  #( Image GenImageGradientV #( int width , int height , Color top
+		        , Color bottom ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImagePerlinNoise: width height: height offsetX: offsetX offsetY: offsetY scale: scale [
+
+	^ self ffiCall:
+		  #( Image GenImagePerlinNoise #( int width , int height , int offsetX
+		        , int offsetY , float scale ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> genImageWhiteNoise: width height: height factor: factor [
+
+	^ self ffiCall:
+		  #( Image GenImageWhiteNoise #( int width , int height , float
+		        factor ) )
 ]
 
 { #category : #'ffi-calls' }
@@ -694,6 +772,13 @@ Raylib class >> getGesturePinchVector [
 
 	^ self ffiCall: #( Vector2 GetGesturePinchVector
 	     #( void ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> getImageAlphaBorder: image threshold: threshold [
+
+	^ self ffiCall:
+		  #( Rectangle GetImageAlphaBorder #( Image image , float threshold ) )
 ]
 
 { #category : #'ffi-calls' }
@@ -921,6 +1006,187 @@ Raylib class >> hideCursor [
 ]
 
 { #category : #'ffi-calls' }
+Raylib class >> imageAlphaClear: image color: color threshold: threshold [
+
+	self ffiCall:
+		#( void ImageAlphaClear #( Image * image , Color color , float threshold ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageAlphaCrop: image threshold: threshold [
+
+	self ffiCall:
+		#( void ImageAlphaCrop #( Image * image , float threshold ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageAlphaMask: image alphaMask: alphaMask [
+
+	self ffiCall:
+		#( void ImageAlphaMask #( Image * image , Image alphaMask ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageAlphaPremultiply: image [
+
+	self ffiCall: #( void ImageAlphaPremultiply #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorBrightness: image brightness: brightness [
+
+	self ffiCall:
+		#( void ImageColorBrightness #( Image * image , int brightness ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorContrast: image contrast: contrast [
+
+	self ffiCall:
+		#( void ImageColorContrast #( Image * image , float contrast ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorGrayscale: image [
+
+	self ffiCall: #( void ImageColorGrayscale #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorInvert: image [
+
+	self ffiCall: #( void ImageColorInvert #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorReplace: image color: color replace: replace [
+
+	self ffiCall:
+		#( void ImageColorReplace #( Image * image , Color color , Color
+		      replace ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageColorTint: image color: color [
+
+	self ffiCall:
+		#( void ImageColorTint #( Image * image , Color color ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageCopy: image [
+
+	^ self ffiCall: #( Image ImageCopy #( Image image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageCrop: image crop: crop [
+
+	self ffiCall: #( void ImageCrop #( Image * image , Rectangle
+	      crop ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageDither: image rBpp: rBpp gBpp: gBpp bBpp: bBpp aBpp: aBpp [
+
+	self ffiCall:
+		#( void ImageDither #( Image * image , int rBpp , int gBpp , int bBpp
+		      , int aBpp ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageFlipHorizontal: image [
+
+	self ffiCall: #( void ImageFlipHorizontal #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageFlipVertical: image [
+
+	self ffiCall: #( void ImageFlipVertical #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageFormat: image newFormat: newFormat [
+
+	self ffiCall:
+		#( void ImageFormat #( Image * image , int newFormat ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageFromImage: image rec: rec [
+
+	^ self ffiCall:
+		  #( Image ImageFromImage #( Image image , Rectangle rec ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageMipmaps: image [
+
+	self ffiCall: #( void ImageMipmaps #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageResize: image newWidth: newWidth newHeight: newHeight [
+	"Bicubic scaling algorithm"
+
+	self ffiCall:
+		#( void ImageResize #( Image * image , int newWidth , int newHeight ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageResizeCanvas: image newWidth: newWidth newHeight: newHeight offsetX: offsetX offsetY: offsetY fill: fill [
+
+	self ffiCall:
+		#( void ImageResizeCanvas #( Image * image , int newWidth , int newHeight
+		      , int offsetX , int offsetY , Color fill ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageResizeNN: image newWidth: newWidth newHeight: newHeight [
+	"Nearest-Neighbor scaling algorithm"
+
+	self ffiCall:
+		#( void ImageResizeNN #( Image * image , int newWidth , int newHeight ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageRotateCCW: image [
+	"Rotate image counter-clockwise 90deg"
+
+	self ffiCall: #( void ImageRotateCCW #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageRotateCW: image [
+	"Rotate image clockwise 90deg"
+
+	self ffiCall: #( void ImageRotateCW #( Image * image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageText: text fontSize: fontSize color: color [
+
+	^ self ffiCall:
+		  #( Image ImageText #( const char * text , int fontSize , Color
+		        color ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageTextEx: font text: text fontSize: fontSize spacing: spacing tint: tint [
+
+	^ self ffiCall:
+		  #( Image ImageTextEx #( Font font , const char * text , float
+		        fontSize , float spacing , Color tint ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> imageToPOT: image fill: fill [
+
+	self ffiCall: #( void ImageToPOT #( Image * image , Color fill ) )
+]
+
+{ #category : #'ffi-calls' }
 Raylib class >> initWindow: width height: height title: title [
 
 	self ffiCall:
@@ -1108,6 +1374,62 @@ Raylib class >> loadFileData: fileName bytesRead: bytesRead [
 Raylib class >> loadFileText: fileName [
 
 	^ self ffiCall: #( char * LoadFileText #( const char * fileName ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImage: fileName [
+
+	^ self ffiCall: #( Image LoadImage #( const char * fileName ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageAnim: fileName frames: frames [
+
+	^ self ffiCall:
+		  #( Image LoadImageAnim #( const char * fileName , int * frames ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageColors: image [
+
+	^ self ffiCall: #( Color * LoadImageColors #( Image image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageFromMemory: fileType fileData: fileData dataSize: dataSize [
+
+	^ self ffiCall:
+		  #( Image LoadImageFromMemory #( const char * fileType , const
+		        unsigned char * fileData , int dataSize ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageFromScreen [
+
+	^ self ffiCall: #( Image LoadImageFromScreen #( void ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageFromTexture: texture [
+
+	^ self ffiCall:
+		  #( Image LoadImageFromTexture #( Texture2D texture ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImagePalette: image maxPaletteSize: maxPaletteSize colorsCount: colorsCount [
+
+	^ self ffiCall:
+		  #( Color * LoadImagePalette #( Image image , int maxPaletteSize
+		        , int * colorsCount ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> loadImageRaw: fileName width: width height: height type: type headerSize: headerSize [
+
+	^ self ffiCall:
+		  #( Image LoadImageRaw #( const char * fileName , int width , int
+		        height , int type , int headerSize ) )
 ]
 
 { #category : #'ffi-calls' }
@@ -1463,6 +1785,24 @@ Raylib class >> unloadFileData: data [
 Raylib class >> unloadFileText: text [
 
 	self ffiCall: #( void UnloadFileText #( char * text ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> unloadImage: image [
+
+	^ self ffiCall: #( void UnloadImage #( Image image ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> unloadImageColors: colors [
+
+	self ffiCall: #( void UnloadImageColors #( Color * colors ) )
+]
+
+{ #category : #'ffi-calls' }
+Raylib class >> unloadImagePalette: colors [
+
+	self ffiCall: #( void UnloadImagePalette #( Color * colors ) )
 ]
 
 { #category : #'ffi-calls' }
