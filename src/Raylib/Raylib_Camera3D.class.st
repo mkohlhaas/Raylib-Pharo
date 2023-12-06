@@ -22,7 +22,7 @@ Class {
 { #category : #'field definition' }
 Raylib_Camera3D class >> fieldsDesc [
 
-	^ #( 
+	^ #(
         Raylib_Vector3 position;
         Raylib_Vector3 target;
         Raylib_Vector3 up;

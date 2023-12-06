@@ -16,9 +16,10 @@ Class {
 { #category : #'field definition' }
 Raylib_Vector2 class >> fieldsDesc [
 
-^ #(
-    float x;
-    float y; )
+   ^ #(
+        float x;
+        float y;
+      )
 ]
 
 { #category : #'accessing - structure variables' }

@@ -18,7 +18,7 @@ Class {
 { #category : #'field definition' }
 Raylib_RenderTexture class >> fieldsDesc [
 
-	^ #(  
+	^ #(
         uint id;
         Raylib_Texture texture;
         Raylib_Texture depth;

@@ -16,7 +16,7 @@ Class {
 { #category : #'field definition' }
 Raylib_Ray class >> fieldsDesc [
 
-	^ #(  
+	^ #(
         Raylib_Vector3 position;
         Raylib_Vector3 direction;
 	   )

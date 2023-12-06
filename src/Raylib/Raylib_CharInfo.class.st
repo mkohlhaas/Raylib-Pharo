@@ -22,7 +22,7 @@ Class {
 { #category : #'field definition' }
 Raylib_CharInfo class >> fieldsDesc [
 
-	^ #( 
+	^ #(
         int value;
         int offsetX;
         int offsetY;

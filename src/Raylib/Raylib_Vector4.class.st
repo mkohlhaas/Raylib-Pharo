@@ -19,7 +19,8 @@ Class {
 { #category : #'field definition' }
 Raylib_Vector4 class >> fieldsDesc [
 
-	^ #( float x;
+	^ #(
+	     float x;
         float y;
         float z;
         float w;

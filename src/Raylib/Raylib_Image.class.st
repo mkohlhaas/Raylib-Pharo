@@ -22,7 +22,7 @@ Class {
 { #category : #'field definition' }
 Raylib_Image class >> fieldsDesc [
 
-	^ #( 
+	^ #(
         void *data;
         int width;
         int height;

@@ -28,7 +28,7 @@ Class {
 { #category : #'field definition' }
 Raylib_Model class >> fieldsDesc [
 
-	^ #(  
+	^ #(
         Raylib_Matrix transform;
         int meshCount;
         int materialCount;

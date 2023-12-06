@@ -20,7 +20,8 @@ Class {
 { #category : #'field definition' }
 Raylib_Rectangle class >> fieldsDesc [
 
-	^ #( float x;
+	^ #( 
+	     float x;
         float y;
         float width;
         float height;

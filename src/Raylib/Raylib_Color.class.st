@@ -20,11 +20,12 @@ Class {
 { #category : #'field definition' }
 Raylib_Color class >> fieldsDesc [
 
-	^ #( unsignedChar r;
+	^ #( 
+	     unsignedChar r;
 	     unsignedChar g;
 	     unsignedChar b;
 	     unsignedChar a;
-	)
+	   )
 ]
 
 { #category : #'accessing - structure variables' }

@@ -32,7 +32,8 @@ Class {
 { #category : #'field definition' }
 Raylib_Matrix class >> fieldsDesc [
 
-	^ #( float m0;
+	^ #( 
+	     float m0;
         float m4;
         float m8;
         float m12;
