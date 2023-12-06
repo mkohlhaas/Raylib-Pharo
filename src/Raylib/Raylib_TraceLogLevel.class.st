@@ -5,6 +5,16 @@ Trace log level organized by priority level.
 Class {
 	#name : #'Raylib_TraceLogLevel',
 	#superclass : #'Raylib_Enums',
+	#classVars : [
+		'LOG_ALL',
+		'LOG_DEBUG',
+		'LOG_ERROR',
+		'LOG_FATAL',
+		'LOG_INFO',
+		'LOG_NONE',
+		'LOG_TRACE',
+		'LOG_WARNING'
+	],
 	#category : #Raylib
 }
 
@@ -21,5 +31,14 @@ Raylib_TraceLogLevel class >> enumDecl [
     LOG_NONE            // Disable logging
    "
 
-	^ #(  )
+	^ #(
+        LOG_ALL      0
+        LOG_TRACE    1
+        LOG_DEBUG    2
+        LOG_INFO     3
+        LOG_WARNING  4
+        LOG_ERROR    5
+        LOG_FATAL    6
+        LOG_NONE     7
+	   )
 ]

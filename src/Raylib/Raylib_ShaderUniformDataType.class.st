@@ -4,6 +4,17 @@ Shader uniform data type
 Class {
 	#name : #'Raylib_ShaderUniformDataType',
 	#superclass : #'Raylib_Enums',
+	#classVars : [
+		'SHADER_UNIFORM_FLOAT',
+		'SHADER_UNIFORM_INT',
+		'SHADER_UNIFORM_IVEC2',
+		'SHADER_UNIFORM_IVEC3',
+		'SHADER_UNIFORM_IVEC4',
+		'SHADER_UNIFORM_SAMPLER2D',
+		'SHADER_UNIFORM_VEC2',
+		'SHADER_UNIFORM_VEC3',
+		'SHADER_UNIFORM_VEC4'
+	],
 	#category : #Raylib
 }
 
@@ -21,5 +32,15 @@ Raylib_ShaderUniformDataType class >> enumDecl [
     SHADER_UNIFORM_SAMPLER2D        // Shader uniform type: sampler2d
    "
 
-	^ #(  )
+	^ #(
+        SHADER_UNIFORM_FLOAT      0
+        SHADER_UNIFORM_VEC2       1
+        SHADER_UNIFORM_VEC3       2
+        SHADER_UNIFORM_VEC4       3
+        SHADER_UNIFORM_INT        4
+        SHADER_UNIFORM_IVEC2      5
+        SHADER_UNIFORM_IVEC3      6
+        SHADER_UNIFORM_IVEC4      7
+        SHADER_UNIFORM_SAMPLER2D  8
+	   )
 ]

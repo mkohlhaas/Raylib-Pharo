@@ -7,6 +7,22 @@ By default all flags are set to 0.
 Class {
 	#name : #'Raylib_ConfigFlags',
 	#superclass : #'Raylib_Enums',
+	#classVars : [
+		'FLAG_FULLSCREEN_MODE',
+		'FLAG_INTERLACED_HINT',
+		'FLAG_MSAA_4X_HINT',
+		'FLAG_VSYNC_HINT',
+		'FLAG_WINDOW_ALWAYS_RUN',
+		'FLAG_WINDOW_HIDDEN',
+		'FLAG_WINDOW_HIGHDPI',
+		'FLAG_WINDOW_MAXIMIZED',
+		'FLAG_WINDOW_MINIMIZED',
+		'FLAG_WINDOW_RESIZABLE',
+		'FLAG_WINDOW_TOPMOST',
+		'FLAG_WINDOW_TRANSPARENT',
+		'FLAG_WINDOW_UNDECORATED',
+		'FLAG_WINDOW_UNFOCUSED'
+	],
 	#category : #Raylib
 }
 
@@ -29,5 +45,21 @@ Raylib_ConfigFlags class >> enumDecl [
     FLAG_INTERLACED_HINT    = 0x00010000    // Set to try enabling interlaced video format (for V3D)
    "
 
-	^ #(  )
+	^ #(
+        FLAG_VSYNC_HINT          16r00000040
+        FLAG_FULLSCREEN_MODE     16r00000002
+        FLAG_WINDOW_RESIZABLE    16r00000004
+        FLAG_WINDOW_UNDECORATED  16r00000008
+        FLAG_WINDOW_HIDDEN       16r00000080
+        FLAG_WINDOW_MINIMIZED    16r00000200
+        FLAG_WINDOW_MAXIMIZED    16r00000400
+        FLAG_WINDOW_UNFOCUSED    16r00000800
+        FLAG_WINDOW_TOPMOST      16r00001000
+        FLAG_WINDOW_ALWAYS_RUN   16r00000100
+        FLAG_WINDOW_TRANSPARENT  16r00000010
+        FLAG_WINDOW_HIGHDPI      16r00002000
+        FLAG_MSAA_4X_HINT        16r00000020
+        FLAG_INTERLACED_HINT     16r00010000
+
+	   )
 ]

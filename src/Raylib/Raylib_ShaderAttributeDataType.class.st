@@ -4,6 +4,12 @@ Shader attribute data types
 Class {
 	#name : #'Raylib_ShaderAttributeDataType',
 	#superclass : #'Raylib_Enums',
+	#classVars : [
+		'SHADER_ATTRIB_FLOAT',
+		'SHADER_ATTRIB_VEC2',
+		'SHADER_ATTRIB_VEC3',
+		'SHADER_ATTRIB_VEC4'
+	],
 	#category : #Raylib
 }
 
@@ -16,5 +22,10 @@ Raylib_ShaderAttributeDataType class >> enumDecl [
     SHADER_ATTRIB_VEC4              // Shader attribute type: vec4 (4 float)
    "
 
-	^ #(  )
+	^ #(
+        SHADER_ATTRIB_FLOAT  0
+        SHADER_ATTRIB_VEC2   1
+        SHADER_ATTRIB_VEC3   2
+        SHADER_ATTRIB_VEC4   3
+	   )
 ]

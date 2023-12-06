@@ -4,6 +4,11 @@ N-patch layout
 Class {
 	#name : #'Raylib_NPatchLayout',
 	#superclass : #'Raylib_Enums',
+	#classVars : [
+		'NPATCH_NINE_PATCH',
+		'NPATCH_THREE_PATCH_HORIZONTAL',
+		'NPATCH_THREE_PATCH_VERTICAL'
+	],
 	#category : #Raylib
 }
 
@@ -15,5 +20,9 @@ Raylib_NPatchLayout class >> enumDecl [
     NPATCH_THREE_PATCH_HORIZONTAL   // Npatch layout: 3x1 tiles
    "
 
-	^ #(  )
+	^ #(
+        NPATCH_NINE_PATCH              0
+        NPATCH_THREE_PATCH_VERTICAL    1
+        NPATCH_THREE_PATCH_HORIZONTAL  2
+	   )
 ]
