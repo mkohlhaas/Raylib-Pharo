@@ -1,9 +1,9 @@
 "
-Type aliases as shared pool.
+I represent type aliases for FFI.
 "
 Class {
-	#name : #RaylibTypeAliases,
-	#superclass : #SharedPool,
+	#name : #'Raylib_TypeAliases',
+	#superclass : #RaylibTypes,
 	#classVars : [
 		'Raylib_Quaternion',
 		'Raylib_RenderTexture2D',
@@ -14,7 +14,7 @@ Class {
 }
 
 { #category : #'class initialization' }
-RaylibTypeAliases class >> initialize [
+Raylib_TypeAliases class >> initialize [
 
 	Raylib_Texture2D := Raylib_Texture.
 	Raylib_TextureCubemap := Raylib_Texture.

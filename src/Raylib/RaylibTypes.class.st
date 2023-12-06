@@ -1,17 +1,8 @@
 "
-Types as shared pool.
+I am a container for all kinds of Raylib types.
 "
 Class {
 	#name : #RaylibTypes,
 	#superclass : #SharedPool,
-	#classVars : [
-		'float4array'
-	],
 	#category : #Raylib
 }
-
-{ #category : #'class initialization' }
-RaylibTypes class >> initialize [
-
-	float4array := FFIArray newArrayTypeOf: #float size: 4
-]

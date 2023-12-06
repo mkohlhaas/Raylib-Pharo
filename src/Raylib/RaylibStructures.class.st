@@ -5,8 +5,9 @@ Class {
 	#name : #RaylibStructures,
 	#superclass : #FFIStructure,
 	#pools : [
-		'RaylibTypeAliases',
-		'RaylibTypes'
+		'Raylib_HelperTypes',
+		'Raylib_OpaqueTypes',
+		'Raylib_TypeAliases'
 	],
 	#category : #Raylib
 }
