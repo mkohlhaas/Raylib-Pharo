@@ -20,6 +20,10 @@ getCodepoint -> pointer needs allocation?
 Class {
 	#name : #Raylib,
 	#superclass : #Object,
+	#pools : [
+		'RaylibTypeAliases',
+		'RaylibTypes'
+	],
 	#category : #Raylib
 }
 
