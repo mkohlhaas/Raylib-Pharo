@@ -5,7 +5,7 @@ int *locs;              // Shader locations array (MAX_SHADER_LOCATIONS)
 "
 Class {
 	#name : #'Raylib_Shader',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_ID',
 		'OFFSET_LOCS'

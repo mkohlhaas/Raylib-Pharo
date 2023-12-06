@@ -7,7 +7,7 @@ float zoom;             // Camera zoom (scaling), should be 1.0f by default
 "
 Class {
 	#name : #'Raylib_Camera2D',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_OFFSET',
 		'OFFSET_ROTATION',

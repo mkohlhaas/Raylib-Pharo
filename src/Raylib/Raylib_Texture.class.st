@@ -8,7 +8,7 @@ int format;             // Data format (PixelFormat type)
 "
 Class {
 	#name : #'Raylib_Texture',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_FORMAT',
 		'OFFSET_HEIGHT',

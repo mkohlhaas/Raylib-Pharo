@@ -7,7 +7,7 @@ Transform **framePoses; // Poses array by frame
 "
 Class {
 	#name : #'Raylib_ModelAnimation',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_BONECOUNT',
 		'OFFSET_BONES',

@@ -6,7 +6,7 @@ float value;            // Material map value
 "
 Class {
 	#name : #'Raylib_MaterialMap',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_COLOR',
 		'OFFSET_TEXTURE',

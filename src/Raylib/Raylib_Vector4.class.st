@@ -6,7 +6,7 @@ float w;                // Vector w component
 "
 Class {
 	#name : #'Raylib_Vector4',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_W',
 		'OFFSET_X',

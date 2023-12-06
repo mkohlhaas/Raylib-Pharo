@@ -7,7 +7,7 @@ float height;           // Rectangle height
 "
 Class {
 	#name : #'Raylib_Rectangle',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_HEIGHT',
 		'OFFSET_WIDTH',

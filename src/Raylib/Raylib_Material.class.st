@@ -6,7 +6,7 @@ float params[4];        // Material generic parameters (if required)
 "
 Class {
 	#name : #'Raylib_Material',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_MAPS',
 		'OFFSET_PARAMS',

@@ -7,7 +7,7 @@ unsigned char a;        // Color alpha value
 "
 Class {
 	#name : #'Raylib_Color',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_A',
 		'OFFSET_B',

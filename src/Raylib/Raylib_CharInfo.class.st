@@ -8,7 +8,7 @@ Image image;            // Character image data
 "
 Class {
 	#name : #'Raylib_CharInfo',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_ADVANCEX',
 		'OFFSET_IMAGE',

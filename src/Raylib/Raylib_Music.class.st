@@ -8,7 +8,7 @@ void *ctxData;              // Audio context data, depends on type
 "
 Class {
 	#name : #'Raylib_Music',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_CTXDATA',
 		'OFFSET_CTXTYPE',

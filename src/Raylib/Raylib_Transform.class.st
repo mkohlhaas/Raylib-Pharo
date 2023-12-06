@@ -6,7 +6,7 @@ Vector3 scale;          // Scale
 "
 Class {
 	#name : #'Raylib_Transform',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_ROTATION',
 		'OFFSET_SCALE',

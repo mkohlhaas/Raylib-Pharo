@@ -7,7 +7,7 @@ Vector3 normal;         // Surface normal of hit
 "
 Class {
 	#name : #'Raylib_RayCollision',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_DISTANCE',
 		'OFFSET_HIT',

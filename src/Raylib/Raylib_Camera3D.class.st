@@ -8,7 +8,7 @@ int projection;         // Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHO
 "
 Class {
 	#name : #'Raylib_Camera3D',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_FOVY',
 		'OFFSET_POSITION',

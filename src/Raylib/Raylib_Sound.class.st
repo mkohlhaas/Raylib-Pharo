@@ -5,7 +5,7 @@ unsigned int sampleCount;   // Total number of samples
 "
 Class {
 	#name : #'Raylib_Sound',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_SAMPLECOUNT',
 		'OFFSET_STREAM'

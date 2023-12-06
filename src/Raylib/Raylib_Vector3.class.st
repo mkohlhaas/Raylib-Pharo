@@ -6,7 +6,7 @@ float z;                // Vector z component
 "
 Class {
 	#name : #'Raylib_Vector3',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_X',
 		'OFFSET_Y',

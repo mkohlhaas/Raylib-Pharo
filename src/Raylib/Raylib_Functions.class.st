@@ -18,7 +18,7 @@ textFormat -> varargs
 getCodepoint -> pointer needs allocation?
 "
 Class {
-	#name : #RaylibFunctions,
+	#name : #'Raylib_Functions',
 	#superclass : #Object,
 	#pools : [
 		'Raylib_HelperTypes',
@@ -29,35 +29,35 @@ Class {
 }
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginBlendMode: mode [
+Raylib_Functions class >> beginBlendMode: mode [
 	"Begin blending mode (alpha, additive, multiplied, subtract, custom)"
 
 	self ffiCall: #( void BeginBlendMode #( int mode ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginDrawing [
+Raylib_Functions class >> beginDrawing [
 	"Setup canvas (framebuffer) to start drawing"
 
 	self ffiCall: #( void BeginDrawing #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginMode2D: camera [
+Raylib_Functions class >> beginMode2D: camera [
 	"Begin 2D mode with custom camera (2D)"
 
 	self ffiCall: #( void BeginMode2D #( Camera2D camera ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginMode3D: camera [
+Raylib_Functions class >> beginMode3D: camera [
 	"Begin 3D mode with custom camera (3D)"
 
 	self ffiCall: #( void BeginMode3D #( Camera3D camera ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginScissorMode: x y: y width: width height: height [
+Raylib_Functions class >> beginScissorMode: x y: y width: width height: height [
 	"Begin scissor mode (define screen area for following drawing)"
 
 	self ffiCall:
@@ -65,14 +65,14 @@ RaylibFunctions class >> beginScissorMode: x y: y width: width height: height [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginShaderMode: shader [
+Raylib_Functions class >> beginShaderMode: shader [
 	"Begin custom shader drawing"
 
 	self ffiCall: #( void BeginShaderMode #( Shader shader ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginTextureMode: target [
+Raylib_Functions class >> beginTextureMode: target [
 	"Begin drawing to render texture"
 
 	self ffiCall: #( void BeginTextureMode #( RenderTexture2D
@@ -80,7 +80,7 @@ RaylibFunctions class >> beginTextureMode: target [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> beginVrStereoMode: config [
+Raylib_Functions class >> beginVrStereoMode: config [
 	"Begin stereo rendering (requires VR simulator)"
 
 	self ffiCall: #( void BeginVrStereoMode #( VrStereoConfig
@@ -88,14 +88,14 @@ RaylibFunctions class >> beginVrStereoMode: config [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> changeDirectory: dir [
+Raylib_Functions class >> changeDirectory: dir [
 	"Change working directory, return true on success"
 
 	^ self ffiCall: #( bool ChangeDirectory #( const char * dir ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionBoxSphere: box center: center radius: radius [
+Raylib_Functions class >> checkCollisionBoxSphere: box center: center radius: radius [
 	"Check collision between box and sphere"
 
 	^ self ffiCall:
@@ -104,7 +104,7 @@ RaylibFunctions class >> checkCollisionBoxSphere: box center: center radius: rad
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionBoxes: box1 box2: box2 [
+Raylib_Functions class >> checkCollisionBoxes: box1 box2: box2 [
 	"Check collision between two bounding boxes"
 
 	^ self ffiCall:
@@ -113,7 +113,7 @@ RaylibFunctions class >> checkCollisionBoxes: box1 box2: box2 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionCircleRec: center radius: radius rec: rec [
+Raylib_Functions class >> checkCollisionCircleRec: center radius: radius rec: rec [
 	"Check collision between circle and rectangle"
 
 	^ self ffiCall:
@@ -122,7 +122,7 @@ RaylibFunctions class >> checkCollisionCircleRec: center radius: radius rec: rec
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionCircles: center1 radius1: radius1 center2: center2 radius2: radius2 [
+Raylib_Functions class >> checkCollisionCircles: center1 radius1: radius1 center2: center2 radius2: radius2 [
 	"Check collision between two circles"
 
 	^ self ffiCall:
@@ -131,7 +131,7 @@ RaylibFunctions class >> checkCollisionCircles: center1 radius1: radius1 center2
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionLines: startPos1 endPos1: endPos1 startPos2: startPos2 endPos2: endPos2 collisionPoint: collisionPoint [
+Raylib_Functions class >> checkCollisionLines: startPos1 endPos1: endPos1 startPos2: startPos2 endPos2: endPos2 collisionPoint: collisionPoint [
 	"Check the collision between two lines defined by two points each, returns collision point by reference"
 
 	^ self ffiCall:
@@ -140,7 +140,7 @@ RaylibFunctions class >> checkCollisionLines: startPos1 endPos1: endPos1 startPo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionPointCircle: point center: center radius: radius [
+Raylib_Functions class >> checkCollisionPointCircle: point center: center radius: radius [
 	"Check if point is inside circle"
 
 	^ self ffiCall:
@@ -149,7 +149,7 @@ RaylibFunctions class >> checkCollisionPointCircle: point center: center radius:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionPointRec: point rec: rec [
+Raylib_Functions class >> checkCollisionPointRec: point rec: rec [
 	"Check if point is inside rectangle"
 
 	^ self ffiCall:
@@ -158,7 +158,7 @@ RaylibFunctions class >> checkCollisionPointRec: point rec: rec [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionPointTriangle: point p1: p1 p2: p2 p3: p3 [
+Raylib_Functions class >> checkCollisionPointTriangle: point p1: p1 p2: p2 p3: p3 [
 	"Check if point is inside a triangle"
 
 	^ self ffiCall:
@@ -167,7 +167,7 @@ RaylibFunctions class >> checkCollisionPointTriangle: point p1: p1 p2: p2 p3: p3
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionRecs: rec1 rec2: rec2 [
+Raylib_Functions class >> checkCollisionRecs: rec1 rec2: rec2 [
 	"Check collision between two rectangles"
 
 	^ self ffiCall:
@@ -175,7 +175,7 @@ RaylibFunctions class >> checkCollisionRecs: rec1 rec2: rec2 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> checkCollisionSpheres: center radius1: radius1 center2: center2 radius2: radius2 [
+Raylib_Functions class >> checkCollisionSpheres: center radius1: radius1 center2: center2 radius2: radius2 [
 	"Check collision between two spheres"
 
 	^ self ffiCall:
@@ -184,49 +184,49 @@ RaylibFunctions class >> checkCollisionSpheres: center radius1: radius1 center2:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> clearBackground: color [
+Raylib_Functions class >> clearBackground: color [
 	"Set background color (framebuffer clear color)"
 
 	self ffiCall: #( void ClearBackground #( Color color ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> clearDirectoryFiles [
+Raylib_Functions class >> clearDirectoryFiles [
 	"Clear directory files paths buffers (free memory)"
 
 	self ffiCall: #( void ClearDirectoryFiles #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> clearDroppedFiles [
+Raylib_Functions class >> clearDroppedFiles [
 	"Clear dropped files paths buffer (free memory)"
 
 	self ffiCall: #( void ClearDroppedFiles #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> clearWindowState: flags [
+Raylib_Functions class >> clearWindowState: flags [
 	"Clear window configuration state flags"
 
 	self ffiCall: #( void ClearWindowState #( unsigned int flags ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> closeAudioDevice [
+Raylib_Functions class >> closeAudioDevice [
 	"Close the audio device and context"
 
 	self ffiCall: #( void CloseAudioDevice #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> closeWindow [
+Raylib_Functions class >> closeWindow [
 	"Close window and unload OpenGL context"
 
 	self ffiCall: #( void CloseWindow #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> codepointToUtf8: codepoint byteLength: byteLength [
+Raylib_Functions class >> codepointToUtf8: codepoint byteLength: byteLength [
 	"Encode codepoint into utf8 text (char array length returned as parameter)"
 
 	^ self ffiCall:
@@ -234,14 +234,14 @@ RaylibFunctions class >> codepointToUtf8: codepoint byteLength: byteLength [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorAlpha: color alpha: alpha [
+Raylib_Functions class >> colorAlpha: color alpha: alpha [
 	"Get color with alpha applied, alpha goes from 0.0f to 1.0f"
 
 	^ self ffiCall: #( Color ColorAlpha #( Color color , float alpha ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorAlphaBlend: dst src: src tint: tint [
+Raylib_Functions class >> colorAlphaBlend: dst src: src tint: tint [
 	"Get src alpha-blended into dst color with tint"
 
 	^ self ffiCall:
@@ -249,7 +249,7 @@ RaylibFunctions class >> colorAlphaBlend: dst src: src tint: tint [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorFromHSV: hue saturation: saturation value: value [
+Raylib_Functions class >> colorFromHSV: hue saturation: saturation value: value [
 	"Get a Color from HSV values, hue [0..360], saturation/value [0..1]"
 
 	^ self ffiCall:
@@ -258,7 +258,7 @@ RaylibFunctions class >> colorFromHSV: hue saturation: saturation value: value [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorFromNormalized: normalized [
+Raylib_Functions class >> colorFromNormalized: normalized [
 	"Get Color from normalized values [0..1]"
 
 	^ self ffiCall:
@@ -266,28 +266,28 @@ RaylibFunctions class >> colorFromNormalized: normalized [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorNormalize: color [
+Raylib_Functions class >> colorNormalize: color [
 	"Get Color normalized as float [0..1]"
 
 	^ self ffiCall: #( Vector4 ColorNormalize #( Color color ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorToHSV: color [
+Raylib_Functions class >> colorToHSV: color [
 	"Get HSV values for a Color, hue [0..360], saturation/value [0..1]"
 
 	^ self ffiCall: #( Vector3 ColorToHSV #( Color color ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> colorToInt: color [
+Raylib_Functions class >> colorToInt: color [
 	"Get hexadecimal value for a Color"
 
 	^ self ffiCall: #( int ColorToInt #( Color color ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> compressData: data dataLength: dataLength compDataLength: compDataLength [
+Raylib_Functions class >> compressData: data dataLength: dataLength compDataLength: compDataLength [
 	"Compress data (DEFLATE algorithm)"
 
 	^ self ffiCall:
@@ -296,7 +296,7 @@ RaylibFunctions class >> compressData: data dataLength: dataLength compDataLengt
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> decompressData: compData compDataLength: compDataLength dataLength: dataLength [
+Raylib_Functions class >> decompressData: compData compDataLength: compDataLength dataLength: dataLength [
 	"Decompress data (DEFLATE algorithm)"
 
 	^ self ffiCall:
@@ -305,21 +305,21 @@ RaylibFunctions class >> decompressData: compData compDataLength: compDataLength
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> directoryExists: dirPath [
+Raylib_Functions class >> directoryExists: dirPath [
 	"Check if a directory path exists"
 
 	^ self ffiCall: #( bool DirectoryExists #( const char * dirPath ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> disableCursor [
+Raylib_Functions class >> disableCursor [
 	"Disables cursor (lock cursor)"
 
 	self ffiCall: #( void DisableCursor #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawBillboard: camera texture: texture position: position size: size tint: tint [
+Raylib_Functions class >> drawBillboard: camera texture: texture position: position size: size tint: tint [
 	"Draw a billboard texture"
 
 	self ffiCall:
@@ -328,7 +328,7 @@ RaylibFunctions class >> drawBillboard: camera texture: texture position: positi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawBillboardPro: camera texture: texture source: source position: position size: size origin: origin rotation: rotation tint: tint [
+Raylib_Functions class >> drawBillboardPro: camera texture: texture source: source position: position size: size origin: origin rotation: rotation tint: tint [
 	"Draw a billboard texture defined by source and rotation"
 
 	self ffiCall:
@@ -338,7 +338,7 @@ RaylibFunctions class >> drawBillboardPro: camera texture: texture source: sourc
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawBillboardRec: camera texture: texture source: source position: position size: size tint: tint [
+Raylib_Functions class >> drawBillboardRec: camera texture: texture source: source position: position size: size tint: tint [
 	"Draw a billboard texture defined by source"
 
 	self ffiCall:
@@ -348,7 +348,7 @@ RaylibFunctions class >> drawBillboardRec: camera texture: texture source: sourc
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawBoundingBox: box color: color [
+Raylib_Functions class >> drawBoundingBox: box color: color [
 	"Draw bounding box (wires)"
 
 	self ffiCall:
@@ -356,7 +356,7 @@ RaylibFunctions class >> drawBoundingBox: box color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircle3D: center radius: radius rotationAxis: rotationAxis rotationAngle: rotationAngle color: color [
+Raylib_Functions class >> drawCircle3D: center radius: radius rotationAxis: rotationAxis rotationAngle: rotationAngle color: color [
 	"Draw a circle in 3D world space"
 
 	self ffiCall:
@@ -365,7 +365,7 @@ RaylibFunctions class >> drawCircle3D: center radius: radius rotationAxis: rotat
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircle: centerX centerY: centerY radius: radius color: color [
+Raylib_Functions class >> drawCircle: centerX centerY: centerY radius: radius color: color [
 	"Draw a color-filled circle"
 
 	self ffiCall:
@@ -374,7 +374,7 @@ RaylibFunctions class >> drawCircle: centerX centerY: centerY radius: radius col
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircleGradient: centerX centerY: centerY radius: radius color1: color1 color2: color2 [
+Raylib_Functions class >> drawCircleGradient: centerX centerY: centerY radius: radius color1: color1 color2: color2 [
 	"Draw a gradient-filled circle"
 
 	self ffiCall:
@@ -383,7 +383,7 @@ RaylibFunctions class >> drawCircleGradient: centerX centerY: centerY radius: ra
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircleLines: centerX centerY: centerY radius: radius color: color [
+Raylib_Functions class >> drawCircleLines: centerX centerY: centerY radius: radius color: color [
 	"Draw circle outline"
 
 	self ffiCall:
@@ -392,7 +392,7 @@ RaylibFunctions class >> drawCircleLines: centerX centerY: centerY radius: radiu
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircleSector: center radius: radius startAngle: startAngle endAngle: endAngle segments: segments color: color [
+Raylib_Functions class >> drawCircleSector: center radius: radius startAngle: startAngle endAngle: endAngle segments: segments color: color [
 	"Draw a piece of a circle"
 
 	self ffiCall:
@@ -401,7 +401,7 @@ RaylibFunctions class >> drawCircleSector: center radius: radius startAngle: sta
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircleSectorLines: center radius: radius startAngle: startAngle endAngle: endAngle segments: segments color: color [
+Raylib_Functions class >> drawCircleSectorLines: center radius: radius startAngle: startAngle endAngle: endAngle segments: segments color: color [
 	"Draw circle sector outline"
 
 	self ffiCall:
@@ -411,7 +411,7 @@ RaylibFunctions class >> drawCircleSectorLines: center radius: radius startAngle
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCircleV: center radius: radius color: color [
+Raylib_Functions class >> drawCircleV: center radius: radius color: color [
 	"Draw a color-filled circle (Vector version)"
 
 	self ffiCall:
@@ -419,7 +419,7 @@ RaylibFunctions class >> drawCircleV: center radius: radius color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCube: position width: width height: height length: length color: color [
+Raylib_Functions class >> drawCube: position width: width height: height length: length color: color [
 	"Draw cube"
 
 	self ffiCall:
@@ -428,7 +428,7 @@ RaylibFunctions class >> drawCube: position width: width height: height length: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCubeTexture: texture position: position width: width height: height length: length color: color [
+Raylib_Functions class >> drawCubeTexture: texture position: position width: width height: height length: length color: color [
 	"Draw cube textured"
 
 	self ffiCall:
@@ -437,7 +437,7 @@ RaylibFunctions class >> drawCubeTexture: texture position: position width: widt
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCubeV: position size: size color: color [
+Raylib_Functions class >> drawCubeV: position size: size color: color [
 	"Draw cube (Vector version)"
 
 	self ffiCall:
@@ -445,7 +445,7 @@ RaylibFunctions class >> drawCubeV: position size: size color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCubeWires: position width: width height: height length: length color: color [
+Raylib_Functions class >> drawCubeWires: position width: width height: height length: length color: color [
 	"Draw cube wires"
 
 	self ffiCall:
@@ -454,7 +454,7 @@ RaylibFunctions class >> drawCubeWires: position width: width height: height len
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCubeWiresV: position size: size color: color [
+Raylib_Functions class >> drawCubeWiresV: position size: size color: color [
 	"Draw cube wires (Vector version)"
 
 	self ffiCall:
@@ -463,7 +463,7 @@ RaylibFunctions class >> drawCubeWiresV: position size: size color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCylinder: position radiusTop: radiusTop radiusBottom: radiusBottom height: height slices: slices color: color [
+Raylib_Functions class >> drawCylinder: position radiusTop: radiusTop radiusBottom: radiusBottom height: height slices: slices color: color [
 	"Draw a cylinder/cone"
 
 	self ffiCall:
@@ -472,7 +472,7 @@ RaylibFunctions class >> drawCylinder: position radiusTop: radiusTop radiusBotto
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawCylinderWires: position radiusTop: radiusTop radiusBottom: radiusBottom height: height slices: slices color: color [
+Raylib_Functions class >> drawCylinderWires: position radiusTop: radiusTop radiusBottom: radiusBottom height: height slices: slices color: color [
 	"Draw a cylinder/cone wires"
 
 	self ffiCall:
@@ -481,7 +481,7 @@ RaylibFunctions class >> drawCylinderWires: position radiusTop: radiusTop radius
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawEllipse: centerX centerY: centerY radiusH: radiusH radiusV: radiusV color: color [
+Raylib_Functions class >> drawEllipse: centerX centerY: centerY radiusH: radiusH radiusV: radiusV color: color [
 	"Draw ellipse"
 
 	self ffiCall:
@@ -490,7 +490,7 @@ RaylibFunctions class >> drawEllipse: centerX centerY: centerY radiusH: radiusH 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawEllipseLines: centerX centerY: centerY radiusH: radiusH radiusV: radiusV color: color [
+Raylib_Functions class >> drawEllipseLines: centerX centerY: centerY radiusH: radiusH radiusV: radiusV color: color [
 	"Draw ellipse outline"
 
 	self ffiCall:
@@ -499,21 +499,21 @@ RaylibFunctions class >> drawEllipseLines: centerX centerY: centerY radiusH: rad
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawFPS: posX posY: posY [
+Raylib_Functions class >> drawFPS: posX posY: posY [
 	"Draw current FPS"
 
 	self ffiCall: #( void DrawFPS #( int posX , int posY ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawGrid: slices spacing: spacing [
+Raylib_Functions class >> drawGrid: slices spacing: spacing [
 	"Draw a grid (centered at (0, 0, 0))"
 
 	self ffiCall: #( void DrawGrid #( int slices , float spacing ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLine3D: startPos endPos: endPos color: color [
+Raylib_Functions class >> drawLine3D: startPos endPos: endPos color: color [
 	"Draw a line in 3D world space"
 
 	self ffiCall:
@@ -522,7 +522,7 @@ RaylibFunctions class >> drawLine3D: startPos endPos: endPos color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLine: startPosX startPosY: startPosY endPosX: endPosX endPosY: endPosY color: color [
+Raylib_Functions class >> drawLine: startPosX startPosY: startPosY endPosX: endPosX endPosY: endPosY color: color [
 	"Draw a line"
 
 	self ffiCall:
@@ -531,7 +531,7 @@ RaylibFunctions class >> drawLine: startPosX startPosY: startPosY endPosX: endPo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLineBezier: startPos endPos: endPos thick: thick color: color [
+Raylib_Functions class >> drawLineBezier: startPos endPos: endPos thick: thick color: color [
 	"Draw a line using cubic-bezier curves in-out"
 
 	self ffiCall:
@@ -540,7 +540,7 @@ RaylibFunctions class >> drawLineBezier: startPos endPos: endPos thick: thick co
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLineBezierQuad: startPos endPos: endPos controlPos: controlPos thick: thick color: color [
+Raylib_Functions class >> drawLineBezierQuad: startPos endPos: endPos controlPos: controlPos thick: thick color: color [
 	"Draw line using quadratic bezier curves with a control point"
 
 	self ffiCall:
@@ -549,7 +549,7 @@ RaylibFunctions class >> drawLineBezierQuad: startPos endPos: endPos controlPos:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLineEx: startPos endPos: endPos thick: thick color: color [
+Raylib_Functions class >> drawLineEx: startPos endPos: endPos thick: thick color: color [
 	"Draw a line defining thickness"
 
 	self ffiCall:
@@ -558,7 +558,7 @@ RaylibFunctions class >> drawLineEx: startPos endPos: endPos thick: thick color:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLineStrip: points pointsCount: pointsCount color: color [
+Raylib_Functions class >> drawLineStrip: points pointsCount: pointsCount color: color [
 	"Draw lines sequence"
 
 	self ffiCall:
@@ -567,7 +567,7 @@ RaylibFunctions class >> drawLineStrip: points pointsCount: pointsCount color: c
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawLineV: startPos endPos: endPos color: color [
+Raylib_Functions class >> drawLineV: startPos endPos: endPos color: color [
 	"Draw a line (Vector version)"
 
 	self ffiCall:
@@ -575,7 +575,7 @@ RaylibFunctions class >> drawLineV: startPos endPos: endPos color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawMesh: mesh material: material transform: transform [
+Raylib_Functions class >> drawMesh: mesh material: material transform: transform [
 	"Draw a 3d mesh with material and transform"
 
 	self ffiCall:
@@ -583,7 +583,7 @@ RaylibFunctions class >> drawMesh: mesh material: material transform: transform 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawMeshInstanced: mesh material: material transforms: transforms instances: instances [
+Raylib_Functions class >> drawMeshInstanced: mesh material: material transforms: transforms instances: instances [
 	"Draw multiple mesh instances with material and different transforms"
 
 	self ffiCall:
@@ -592,7 +592,7 @@ RaylibFunctions class >> drawMeshInstanced: mesh material: material transforms: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawModel: model position: position scale: scale tint: tint [
+Raylib_Functions class >> drawModel: model position: position scale: scale tint: tint [
 	"Draw a model (with texture if set)"
 
 	self ffiCall:
@@ -601,7 +601,7 @@ RaylibFunctions class >> drawModel: model position: position scale: scale tint: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawModelEx: model position: position rotationAxis: rotationAxis rotationAngle: rotationAngle scale: scale tint: tint [
+Raylib_Functions class >> drawModelEx: model position: position rotationAxis: rotationAxis rotationAngle: rotationAngle scale: scale tint: tint [
 	"Draw a model with extended parameters"
 
 	self ffiCall:
@@ -611,7 +611,7 @@ RaylibFunctions class >> drawModelEx: model position: position rotationAxis: rot
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawModelWires: model position: position scale: scale tint: tint [
+Raylib_Functions class >> drawModelWires: model position: position scale: scale tint: tint [
 	"Draw a model wires (with texture if set)"
 
 	self ffiCall:
@@ -620,7 +620,7 @@ RaylibFunctions class >> drawModelWires: model position: position scale: scale t
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawModelWiresEx: model position: position rotationAxis: rotationAxis rotationAngle: rotationAngle scale: scale tint: tint [
+Raylib_Functions class >> drawModelWiresEx: model position: position rotationAxis: rotationAxis rotationAngle: rotationAngle scale: scale tint: tint [
 	"Draw a model wires (with texture if set) with extended parameters"
 
 	self ffiCall:
@@ -630,7 +630,7 @@ RaylibFunctions class >> drawModelWiresEx: model position: position rotationAxis
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPixel: posX posY: posY color: color [
+Raylib_Functions class >> drawPixel: posX posY: posY color: color [
 	"Draw a pixel"
 
 	self ffiCall:
@@ -638,7 +638,7 @@ RaylibFunctions class >> drawPixel: posX posY: posY color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPixelV: position color: color [
+Raylib_Functions class >> drawPixelV: position color: color [
 	"Draw a pixel (Vector version)"
 
 	self ffiCall:
@@ -646,7 +646,7 @@ RaylibFunctions class >> drawPixelV: position color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPlane: centerPos size: size color: color [
+Raylib_Functions class >> drawPlane: centerPos size: size color: color [
 	"Draw a plane XZ"
 
 	self ffiCall:
@@ -654,7 +654,7 @@ RaylibFunctions class >> drawPlane: centerPos size: size color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPoint3D: position color: color [
+Raylib_Functions class >> drawPoint3D: position color: color [
 	"Draw a point in 3D space, actually a small line"
 
 	self ffiCall:
@@ -662,7 +662,7 @@ RaylibFunctions class >> drawPoint3D: position color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPoly: center sides: sides radius: radius rotation: rotation color: color [
+Raylib_Functions class >> drawPoly: center sides: sides radius: radius rotation: rotation color: color [
 	"Draw a regular polygon (Vector version)"
 
 	self ffiCall:
@@ -671,7 +671,7 @@ RaylibFunctions class >> drawPoly: center sides: sides radius: radius rotation: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPolyLines: center sides: sides radius: radius rotation: rotation color: color [
+Raylib_Functions class >> drawPolyLines: center sides: sides radius: radius rotation: rotation color: color [
 	"Draw a polygon outline of n sides"
 
 	self ffiCall:
@@ -680,7 +680,7 @@ RaylibFunctions class >> drawPolyLines: center sides: sides radius: radius rotat
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawPolyLinesEx: center sides: sides radius: radius rotation: rotation lineThick: lineThick color: color [
+Raylib_Functions class >> drawPolyLinesEx: center sides: sides radius: radius rotation: rotation lineThick: lineThick color: color [
 	"Draw a polygon outline of n sides with extended parameters"
 
 	self ffiCall:
@@ -689,14 +689,14 @@ RaylibFunctions class >> drawPolyLinesEx: center sides: sides radius: radius rot
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRay: ray color: colore [
+Raylib_Functions class >> drawRay: ray color: colore [
 	"Draw a ray line"
 
 	self ffiCall: #( void DrawRay #( Ray ray , Color color ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangle: posX posY: posY width: width height: height color: color [
+Raylib_Functions class >> drawRectangle: posX posY: posY width: width height: height color: color [
 	"Draw a color-filled rectangle"
 
 	self ffiCall:
@@ -705,7 +705,7 @@ RaylibFunctions class >> drawRectangle: posX posY: posY width: width height: hei
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleGradientEx: rec col1: col1 col2: col2 col3: col3 col4: col4 [
+Raylib_Functions class >> drawRectangleGradientEx: rec col1: col1 col2: col2 col3: col3 col4: col4 [
 	"Draw a gradient-filled rectangle with custom vertex colors"
 
 	self ffiCall:
@@ -714,7 +714,7 @@ RaylibFunctions class >> drawRectangleGradientEx: rec col1: col1 col2: col2 col3
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleGradientH: posX posY: posY width: width height: height color1: color1 color2: color2 [
+Raylib_Functions class >> drawRectangleGradientH: posX posY: posY width: width height: height color1: color1 color2: color2 [
 	"Draw a horizontal-gradient-filled rectangle"
 
 	self ffiCall:
@@ -723,7 +723,7 @@ RaylibFunctions class >> drawRectangleGradientH: posX posY: posY width: width he
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleGradientV: posX posY: posY width: width height: height color1: color1 color2: color2 [
+Raylib_Functions class >> drawRectangleGradientV: posX posY: posY width: width height: height color1: color1 color2: color2 [
 	"Draw a vertical-gradient-filled rectangle"
 
 	self ffiCall:
@@ -732,7 +732,7 @@ RaylibFunctions class >> drawRectangleGradientV: posX posY: posY width: width he
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleLines: posX posY: posY width: width height: height color: color [
+Raylib_Functions class >> drawRectangleLines: posX posY: posY width: width height: height color: color [
 	"Draw rectangle outline"
 
 	self ffiCall:
@@ -741,7 +741,7 @@ RaylibFunctions class >> drawRectangleLines: posX posY: posY width: width height
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleLinesEx: rec lineThick: lineThick color: color [
+Raylib_Functions class >> drawRectangleLinesEx: rec lineThick: lineThick color: color [
 	"Draw rectangle outline with extended parameters"
 
 	self ffiCall:
@@ -750,7 +750,7 @@ RaylibFunctions class >> drawRectangleLinesEx: rec lineThick: lineThick color: c
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectanglePro: rec origin: origin rotation: rotation color: color [
+Raylib_Functions class >> drawRectanglePro: rec origin: origin rotation: rotation color: color [
 	"Draw a color-filled rectangle with pro parameters"
 
 	self ffiCall:
@@ -759,7 +759,7 @@ RaylibFunctions class >> drawRectanglePro: rec origin: origin rotation: rotation
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleRec: rec color: color [
+Raylib_Functions class >> drawRectangleRec: rec color: color [
 	"Draw a color-filled rectangle"
 
 	self ffiCall:
@@ -767,7 +767,7 @@ RaylibFunctions class >> drawRectangleRec: rec color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleRounded: rec roundness: roundness segments: segments color: color [
+Raylib_Functions class >> drawRectangleRounded: rec roundness: roundness segments: segments color: color [
 	"Draw rectangle with rounded edges"
 
 	self ffiCall:
@@ -776,7 +776,7 @@ RaylibFunctions class >> drawRectangleRounded: rec roundness: roundness segments
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleRoundedLines: rec roundness: roundness segments: segments lineThick: lineThick color: color [
+Raylib_Functions class >> drawRectangleRoundedLines: rec roundness: roundness segments: segments lineThick: lineThick color: color [
 	"Draw rectangle with rounded edges outline"
 
 	self ffiCall:
@@ -785,7 +785,7 @@ RaylibFunctions class >> drawRectangleRoundedLines: rec roundness: roundness seg
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRectangleV: position size: size color: color [
+Raylib_Functions class >> drawRectangleV: position size: size color: color [
 	"Draw rectangle within an image (Vector version)"
 
 	self ffiCall:
@@ -794,7 +794,7 @@ RaylibFunctions class >> drawRectangleV: position size: size color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRing: center innerRadius: innerRadius outerRadius: outerRadius startAngle: startAngle endAngle: endAngle segments: segments color: color [
+Raylib_Functions class >> drawRing: center innerRadius: innerRadius outerRadius: outerRadius startAngle: startAngle endAngle: endAngle segments: segments color: color [
 	"Draw ring"
 
 	self ffiCall:
@@ -804,7 +804,7 @@ RaylibFunctions class >> drawRing: center innerRadius: innerRadius outerRadius: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawRingLines: center innerRadius: innerRadius outerRadius: outerRadius startAngle: startAngle endAngle: endAngle segments: segments color: color [
+Raylib_Functions class >> drawRingLines: center innerRadius: innerRadius outerRadius: outerRadius startAngle: startAngle endAngle: endAngle segments: segments color: color [
 	"Draw ring outline"
 
 	self ffiCall:
@@ -814,7 +814,7 @@ RaylibFunctions class >> drawRingLines: center innerRadius: innerRadius outerRad
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawSphere: centerPos radius: radius color: color [
+Raylib_Functions class >> drawSphere: centerPos radius: radius color: color [
 	"Draw sphere"
 
 	self ffiCall:
@@ -822,7 +822,7 @@ RaylibFunctions class >> drawSphere: centerPos radius: radius color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawSphereEx: centerPos radius: radius rings: rings slices: slices color: color [
+Raylib_Functions class >> drawSphereEx: centerPos radius: radius rings: rings slices: slices color: color [
 	"Draw sphere with extended parameters"
 
 	self ffiCall:
@@ -831,7 +831,7 @@ RaylibFunctions class >> drawSphereEx: centerPos radius: radius rings: rings sli
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawSphereWires: centerPos radius: radius rings: rings slices: slices color: color [
+Raylib_Functions class >> drawSphereWires: centerPos radius: radius rings: rings slices: slices color: color [
 	"Draw sphere wires"
 
 	self ffiCall:
@@ -840,7 +840,7 @@ RaylibFunctions class >> drawSphereWires: centerPos radius: radius rings: rings 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawText: text posX: posX posY: posY fontSize: fontSize color: color [
+Raylib_Functions class >> drawText: text posX: posX posY: posY fontSize: fontSize color: color [
 	"Draw text (using default font) within an image (destination)"
 
 	self ffiCall:
@@ -849,7 +849,7 @@ RaylibFunctions class >> drawText: text posX: posX posY: posY fontSize: fontSize
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextCodepoint: font codepoint: codepoint position: position fontSize: fontSize tint: tint [
+Raylib_Functions class >> drawTextCodepoint: font codepoint: codepoint position: position fontSize: fontSize tint: tint [
 	"Draw one character (codepoint)"
 
 	self ffiCall:
@@ -858,7 +858,7 @@ RaylibFunctions class >> drawTextCodepoint: font codepoint: codepoint position: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextEx: font text: text position: position fontSize: fontSize spacing: spacing tint: tint [
+Raylib_Functions class >> drawTextEx: font text: text position: position fontSize: fontSize spacing: spacing tint: tint [
 	"Draw text using font and additional parameters"
 
 	self ffiCall:
@@ -867,7 +867,7 @@ RaylibFunctions class >> drawTextEx: font text: text position: position fontSize
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextRec: font text: text rec: rec fontSize: fontSize spacing: spacing wordWrap: wordWrap tint: tint [
+Raylib_Functions class >> drawTextRec: font text: text rec: rec fontSize: fontSize spacing: spacing wordWrap: wordWrap tint: tint [
 	"Draw text using font inside rectangle limits"
 
 	self ffiCall:
@@ -877,7 +877,7 @@ RaylibFunctions class >> drawTextRec: font text: text rec: rec fontSize: fontSiz
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextRecEx: font text: text rec: rec fontSize: fontSize spacing: spacing wordWrap: wordWrap tint: tint selectStart: selectStart selectLength: selectLength selectTint: selectTint selectBackTint: selectBackTint [
+Raylib_Functions class >> drawTextRecEx: font text: text rec: rec fontSize: fontSize spacing: spacing wordWrap: wordWrap tint: tint selectStart: selectStart selectLength: selectLength selectTint: selectTint selectBackTint: selectBackTint [
 	"Draw text using font inside rectangle limits with support for text selection"
 
 	self ffiCall:
@@ -888,7 +888,7 @@ RaylibFunctions class >> drawTextRecEx: font text: text rec: rec fontSize: fontS
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTexture: texture posX: posX posY: posY tint: tint [
+Raylib_Functions class >> drawTexture: texture posX: posX posY: posY tint: tint [
 	"Draw a Texture2D"
 
 	self ffiCall:
@@ -897,7 +897,7 @@ RaylibFunctions class >> drawTexture: texture posX: posX posY: posY tint: tint [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureEx: texture position: position rotation: rotation scale: scale tint: tint [
+Raylib_Functions class >> drawTextureEx: texture position: position rotation: rotation scale: scale tint: tint [
 	"Draw a Texture2D with extended parameters"
 
 	self ffiCall:
@@ -906,7 +906,7 @@ RaylibFunctions class >> drawTextureEx: texture position: position rotation: rot
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureNPatch: texture nPatchInfo: nPatchInfo dest: dest origin: origin rotation: rotation tint: tint [
+Raylib_Functions class >> drawTextureNPatch: texture nPatchInfo: nPatchInfo dest: dest origin: origin rotation: rotation tint: tint [
 	"Draws a texture (or part of it) that stretches or shrinks nicely"
 
 	self ffiCall:
@@ -916,7 +916,7 @@ RaylibFunctions class >> drawTextureNPatch: texture nPatchInfo: nPatchInfo dest:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTexturePoly: texture center: center points: points texcoords: texcoords pointsCount: pointsCount tint: tint [
+Raylib_Functions class >> drawTexturePoly: texture center: center points: points texcoords: texcoords pointsCount: pointsCount tint: tint [
 	"Draw a textured polygon"
 
 	self ffiCall:
@@ -925,7 +925,7 @@ RaylibFunctions class >> drawTexturePoly: texture center: center points: points 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTexturePro: texture source: source dest: dest origin: origin rotation: rotation tint: tint [
+Raylib_Functions class >> drawTexturePro: texture source: source dest: dest origin: origin rotation: rotation tint: tint [
 	"Draw a part of a texture defined by a rectangle with 'pro' parameters"
 
 	self ffiCall:
@@ -935,7 +935,7 @@ RaylibFunctions class >> drawTexturePro: texture source: source dest: dest origi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureQuad: texture tiling: tiling offset: offset quad: quad tint: tint [
+Raylib_Functions class >> drawTextureQuad: texture tiling: tiling offset: offset quad: quad tint: tint [
 	"Draw texture quad with tiling and offset parameters"
 
 	self ffiCall:
@@ -944,7 +944,7 @@ RaylibFunctions class >> drawTextureQuad: texture tiling: tiling offset: offset 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureRec: texture source: source position: position tint: tint [
+Raylib_Functions class >> drawTextureRec: texture source: source position: position tint: tint [
 	"Draw a part of a texture defined by a rectangle"
 
 	self ffiCall:
@@ -953,7 +953,7 @@ RaylibFunctions class >> drawTextureRec: texture source: source position: positi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureTiled: texture source: source dest: dest origin: origin rotation: rotation scale: scale tint: tint [
+Raylib_Functions class >> drawTextureTiled: texture source: source dest: dest origin: origin rotation: rotation scale: scale tint: tint [
 	"Draw part of a texture (defined by a rectangle) with rotation and scale tiled into dest."
 
 	self ffiCall:
@@ -963,7 +963,7 @@ RaylibFunctions class >> drawTextureTiled: texture source: source dest: dest ori
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTextureV: texture position: position tint: tint [
+Raylib_Functions class >> drawTextureV: texture position: position tint: tint [
 	"Draw a Texture2D with position defined as Vector2"
 
 	self ffiCall:
@@ -972,7 +972,7 @@ RaylibFunctions class >> drawTextureV: texture position: position tint: tint [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangle3D: v1 v2: v2 v3: v3 color: color [
+Raylib_Functions class >> drawTriangle3D: v1 v2: v2 v3: v3 color: color [
 	"Draw a color-filled triangle (vertex in counter-clockwise order!)"
 
 	self ffiCall:
@@ -981,7 +981,7 @@ RaylibFunctions class >> drawTriangle3D: v1 v2: v2 v3: v3 color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangle: v1 v2: v2 v3: v3 color: color [
+Raylib_Functions class >> drawTriangle: v1 v2: v2 v3: v3 color: color [
 	"Draw a color-filled triangle (vertex in counter-clockwise order!)"
 
 	self ffiCall:
@@ -990,7 +990,7 @@ RaylibFunctions class >> drawTriangle: v1 v2: v2 v3: v3 color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangleFan: points pointsCount: pointsCount color: color [
+Raylib_Functions class >> drawTriangleFan: points pointsCount: pointsCount color: color [
 	"Draw a triangle fan defined by points (first vertex is the center)"
 
 	self ffiCall:
@@ -999,7 +999,7 @@ RaylibFunctions class >> drawTriangleFan: points pointsCount: pointsCount color:
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangleLines: v1 v2: v2 v3: v3 color: color [
+Raylib_Functions class >> drawTriangleLines: v1 v2: v2 v3: v3 color: color [
 	"Draw triangle outline (vertex in counter-clockwise order!)"
 
 	self ffiCall:
@@ -1008,7 +1008,7 @@ RaylibFunctions class >> drawTriangleLines: v1 v2: v2 v3: v3 color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangleStrip3D: points pointsCount: pointsCount color: color [
+Raylib_Functions class >> drawTriangleStrip3D: points pointsCount: pointsCount color: color [
 	"Draw a triangle strip defined by points"
 
 	self ffiCall:
@@ -1017,7 +1017,7 @@ RaylibFunctions class >> drawTriangleStrip3D: points pointsCount: pointsCount co
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> drawTriangleStrip: points pointsCount: pointsCount color: color [
+Raylib_Functions class >> drawTriangleStrip: points pointsCount: pointsCount color: color [
 	"Draw a triangle strip defined by points"
 
 	self ffiCall:
@@ -1026,70 +1026,70 @@ RaylibFunctions class >> drawTriangleStrip: points pointsCount: pointsCount colo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> enableCursor [
+Raylib_Functions class >> enableCursor [
 	"Enables cursor (unlock cursor)"
 
 	self ffiCall: #( void EnableCursor #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endBlendMode [
+Raylib_Functions class >> endBlendMode [
 	"End blending mode (reset to default: alpha blending)"
 
 	self ffiCall: #( void EndBlendMode #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endDrawing [
+Raylib_Functions class >> endDrawing [
 	"End canvas drawing and swap buffers (double buffering)"
 
 	self ffiCall: #( void EndDrawing #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endMode2D [
+Raylib_Functions class >> endMode2D [
 	"Ends 2D mode with custom camera"
 
 	self ffiCall: #( void EndMode2D #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endMode3D [
+Raylib_Functions class >> endMode3D [
 	"Ends 3D mode and returns to default 2D orthographic mode"
 
 	self ffiCall: #( void EndMode3D #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endScissorMode [
+Raylib_Functions class >> endScissorMode [
 	"End scissor mode"
 
 	self ffiCall: #( void EndScissorMode #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endShaderMode [
+Raylib_Functions class >> endShaderMode [
 	"End custom shader drawing (use default shader)"
 
 	self ffiCall: #( void EndShaderMode #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endTextureMode [
+Raylib_Functions class >> endTextureMode [
 	"Ends drawing to render texture"
 
 	self ffiCall: #( void EndTextureMode #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> endVrStereoMode [
+Raylib_Functions class >> endVrStereoMode [
 	"End stereo rendering (requires VR simulator)"
 
 	self ffiCall: #( void EndVrStereoMode #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> exportImage: image fileName: fileName [
+Raylib_Functions class >> exportImage: image fileName: fileName [
 	"Export image data to file, returns true on success"
 
 	^ self ffiCall:
@@ -1097,7 +1097,7 @@ RaylibFunctions class >> exportImage: image fileName: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> exportImageAsCode: image fileName: fileName [
+Raylib_Functions class >> exportImageAsCode: image fileName: fileName [
 	"Export image as code file defining an array of bytes, returns true on success"
 
 	^ self ffiCall:
@@ -1105,7 +1105,7 @@ RaylibFunctions class >> exportImageAsCode: image fileName: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> exportMesh: mesh fileName: fileName [
+Raylib_Functions class >> exportMesh: mesh fileName: fileName [
 	"Export mesh data to file, returns true on success"
 
 	^ self ffiCall:
@@ -1113,7 +1113,7 @@ RaylibFunctions class >> exportMesh: mesh fileName: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> exportWave: wave fileName: fileName [
+Raylib_Functions class >> exportWave: wave fileName: fileName [
 	"Export wave data to file, returns true on success"
 
 	^ self ffiCall:
@@ -1121,7 +1121,7 @@ RaylibFunctions class >> exportWave: wave fileName: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> exportWaveAsCode: wave fileName: fileName [
+Raylib_Functions class >> exportWaveAsCode: wave fileName: fileName [
 	"Export wave sample data to code (.h), returns true on success"
 
 	^ self ffiCall:
@@ -1129,21 +1129,21 @@ RaylibFunctions class >> exportWaveAsCode: wave fileName: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> fade: color alpha: alpha [
+Raylib_Functions class >> fade: color alpha: alpha [
 	"Get color with alpha applied, alpha goes from 0.0f to 1.0f"
 
 	^ self ffiCall: #( Color Fade #( Color color , float alpha ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> fileExists: fileName [
+Raylib_Functions class >> fileExists: fileName [
 	"Check if file exists"
 
 	^ self ffiCall: #( bool FileExists #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageCellular: width height: height tileSize: tileSize [
+Raylib_Functions class >> genImageCellular: width height: height tileSize: tileSize [
 	"Generate image: cellular algorithm. Bigger tileSize means bigger cells"
 
 	^ self ffiCall:
@@ -1151,7 +1151,7 @@ RaylibFunctions class >> genImageCellular: width height: height tileSize: tileSi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageChecked: width height: height checksX: checksX checksY: checksY col1: col1 col2: col2 [
+Raylib_Functions class >> genImageChecked: width height: height checksX: checksX checksY: checksY col1: col1 col2: col2 [
 	"Generate image: checked"
 
 	^ self ffiCall:
@@ -1160,7 +1160,7 @@ RaylibFunctions class >> genImageChecked: width height: height checksX: checksX 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageColor: width height: height color: color [
+Raylib_Functions class >> genImageColor: width height: height color: color [
 	"Generate image: plain color"
 
 	^ self ffiCall:
@@ -1168,7 +1168,7 @@ RaylibFunctions class >> genImageColor: width height: height color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageFontAtlas: chars recs: recs charsCount: charsCount [
+Raylib_Functions class >> genImageFontAtlas: chars recs: recs charsCount: charsCount [
 	"Generate image font atlas using chars info"
 
 	^ self ffiCall:
@@ -1178,7 +1178,7 @@ RaylibFunctions class >> genImageFontAtlas: chars recs: recs charsCount: charsCo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageGradientH: width height: height left: left right: right [
+Raylib_Functions class >> genImageGradientH: width height: height left: left right: right [
 	"Generate image: horizontal gradient"
 
 	^ self ffiCall:
@@ -1187,7 +1187,7 @@ RaylibFunctions class >> genImageGradientH: width height: height left: left righ
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageGradientRadial: width height: height density: density inner: inner outer: outer [
+Raylib_Functions class >> genImageGradientRadial: width height: height density: density inner: inner outer: outer [
 	"Generate image: radial gradient"
 
 	^ self ffiCall:
@@ -1196,7 +1196,7 @@ RaylibFunctions class >> genImageGradientRadial: width height: height density: d
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageGradientV: width height: height top: top bottom: bottom [
+Raylib_Functions class >> genImageGradientV: width height: height top: top bottom: bottom [
 	"Generate image: vertical gradient"
 
 	^ self ffiCall:
@@ -1205,7 +1205,7 @@ RaylibFunctions class >> genImageGradientV: width height: height top: top bottom
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImagePerlinNoise: width height: height offsetX: offsetX offsetY: offsetY scale: scale [
+Raylib_Functions class >> genImagePerlinNoise: width height: height offsetX: offsetX offsetY: offsetY scale: scale [
 	"Generate image: perlin noise"
 
 	^ self ffiCall:
@@ -1214,7 +1214,7 @@ RaylibFunctions class >> genImagePerlinNoise: width height: height offsetX: offs
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genImageWhiteNoise: width height: height factor: factor [
+Raylib_Functions class >> genImageWhiteNoise: width height: height factor: factor [
 	"Generate image: white noise"
 
 	^ self ffiCall:
@@ -1223,14 +1223,14 @@ RaylibFunctions class >> genImageWhiteNoise: width height: height factor: factor
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshBinormals: mesh [
+Raylib_Functions class >> genMeshBinormals: mesh [
 	"Compute mesh binormals"
 
 	self ffiCall: #( void GenMeshBinormals #( Mesh * mesh ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshCube: width height: height length: length [
+Raylib_Functions class >> genMeshCube: width height: height length: length [
 	"Generate cuboid mesh"
 
 	^ self ffiCall:
@@ -1238,7 +1238,7 @@ RaylibFunctions class >> genMeshCube: width height: height length: length [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshCubicmap: cubicmap cubeSize: cubeSize [
+Raylib_Functions class >> genMeshCubicmap: cubicmap cubeSize: cubeSize [
 	"Generate cubes-based map mesh from image data"
 
 	^ self ffiCall:
@@ -1246,7 +1246,7 @@ RaylibFunctions class >> genMeshCubicmap: cubicmap cubeSize: cubeSize [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshCylinder: radius height: height slices: slices [
+Raylib_Functions class >> genMeshCylinder: radius height: height slices: slices [
 	"Generate cylinder mesh"
 
 	^ self ffiCall:
@@ -1254,7 +1254,7 @@ RaylibFunctions class >> genMeshCylinder: radius height: height slices: slices [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshHeightmap: heightmap size: size [
+Raylib_Functions class >> genMeshHeightmap: heightmap size: size [
 	"Generate heightmap mesh from image data"
 
 	^ self ffiCall:
@@ -1262,7 +1262,7 @@ RaylibFunctions class >> genMeshHeightmap: heightmap size: size [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshHemiSphere: radius rings: rings slices: slices [
+Raylib_Functions class >> genMeshHemiSphere: radius rings: rings slices: slices [
 	"Generate half-sphere mesh (no bottom cap)"
 
 	^ self ffiCall:
@@ -1270,7 +1270,7 @@ RaylibFunctions class >> genMeshHemiSphere: radius rings: rings slices: slices [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshKnot: radius size: size radSeg: radSeg sides: sides [
+Raylib_Functions class >> genMeshKnot: radius size: size radSeg: radSeg sides: sides [
 	"Generate trefoil knot mesh"
 
 	^ self ffiCall:
@@ -1279,7 +1279,7 @@ RaylibFunctions class >> genMeshKnot: radius size: size radSeg: radSeg sides: si
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshPlane: width length: length resX: resX resZ: resZ [
+Raylib_Functions class >> genMeshPlane: width length: length resX: resX resZ: resZ [
 	"Generate plane mesh (with subdivisions)"
 
 	^ self ffiCall:
@@ -1288,14 +1288,14 @@ RaylibFunctions class >> genMeshPlane: width length: length resX: resX resZ: res
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshPoly: sides radius: radius [
+Raylib_Functions class >> genMeshPoly: sides radius: radius [
 	"Generate polygonal mesh"
 
 	^ self ffiCall: #( Mesh GenMeshPoly #( int sides , float radius ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshSphere: radius rings: rings slices: slices [
+Raylib_Functions class >> genMeshSphere: radius rings: rings slices: slices [
 	"Generate sphere mesh (standard sphere)"
 
 	^ self ffiCall:
@@ -1303,14 +1303,14 @@ RaylibFunctions class >> genMeshSphere: radius rings: rings slices: slices [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshTangents: mesh [
+Raylib_Functions class >> genMeshTangents: mesh [
 	"Compute mesh tangents"
 
 	self ffiCall: #( void GenMeshTangents #( Mesh * mesh ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genMeshTorus: radius size: size radSeg: radSeg sides: sides [
+Raylib_Functions class >> genMeshTorus: radius size: size radSeg: radSeg sides: sides [
 	"Generate torus mesh"
 
 	^ self ffiCall:
@@ -1319,42 +1319,42 @@ RaylibFunctions class >> genMeshTorus: radius size: size radSeg: radSeg sides: s
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> genTextureMipmaps: texture [
+Raylib_Functions class >> genTextureMipmaps: texture [
 	"Generate GPU mipmaps for a texture"
 
 	self ffiCall: #( void GenTextureMipmaps #( Texture2D * texture ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCameraMatrix2D: camera [
+Raylib_Functions class >> getCameraMatrix2D: camera [
 	"Get camera 2d transform matrix"
 
 	^ self ffiCall: #( Matrix GetCameraMatrix2D #( Camera2D camera ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCameraMatrix: camera [
+Raylib_Functions class >> getCameraMatrix: camera [
 	"Get camera transform matrix (view matrix)"
 
 	^ self ffiCall: #( Matrix GetCameraMatrix #( Camera camera ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCharPressed [
+Raylib_Functions class >> getCharPressed [
 	"Get char pressed (unicode), call it multiple times for chars queued"
 
 	^ self ffiCall: #( int GetCharPressed #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getClipboardText [
+Raylib_Functions class >> getClipboardText [
 	"Get clipboard text content"
 
 	^ self ffiCall: #( const char * GetClipboardText #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCodepoint: text bytesProcessed: bytesProcessed [
+Raylib_Functions class >> getCodepoint: text bytesProcessed: bytesProcessed [
 	"Get next codepoint in a UTF8 encoded string, 0x3f('?') is returned on failure"
 
 	^ self ffiCall:
@@ -1362,14 +1362,14 @@ RaylibFunctions class >> getCodepoint: text bytesProcessed: bytesProcessed [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCodepointsCount: text [
+Raylib_Functions class >> getCodepointsCount: text [
 	"Get total number of characters (codepoints) in a UTF8 encoded string"
 
 	^ self ffiCall: #( int GetCodepointsCount #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCollisionRec: rec1 rec2: rec2 [
+Raylib_Functions class >> getCollisionRec: rec1 rec2: rec2 [
 	"Get collision rectangle for two rectangles collision"
 
 	^ self ffiCall:
@@ -1378,21 +1378,21 @@ RaylibFunctions class >> getCollisionRec: rec1 rec2: rec2 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getColor: hexValue [
+Raylib_Functions class >> getColor: hexValue [
 	"Get Color structure from hexadecimal value"
 
 	^ self ffiCall: #( Color GetColor #( int hexValue ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getCurrentMonitor [
+Raylib_Functions class >> getCurrentMonitor [
 	"Get current connected monitor"
 
 	^ self ffiCall: #( int GetCurrentMonitor #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getDirectoryFiles: dirPath count: count [
+Raylib_Functions class >> getDirectoryFiles: dirPath count: count [
 	"Get filenames in a directory path (memory should be freed)"
 
 	^ self ffiCall:
@@ -1400,7 +1400,7 @@ RaylibFunctions class >> getDirectoryFiles: dirPath count: count [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getDirectoryPath: filePath [
+Raylib_Functions class >> getDirectoryPath: filePath [
 	"Get full path for a given fileName with path (uses static string)"
 
 	^ self ffiCall:
@@ -1408,21 +1408,21 @@ RaylibFunctions class >> getDirectoryPath: filePath [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getDroppedFiles: count [
+Raylib_Functions class >> getDroppedFiles: count [
 	"Get dropped files names (memory should be freed)"
 
 	^ self ffiCall: #( char ** GetDroppedFiles #( int * count ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFPS [
+Raylib_Functions class >> getFPS [
 	"Get current FPS"
 
 	^ self ffiCall: #( int GetFPS #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFileExtension: fileName [
+Raylib_Functions class >> getFileExtension: fileName [
 	"Get pointer to extension for a filename string (includes dot: '.png')"
 
 	^ self ffiCall:
@@ -1430,14 +1430,14 @@ RaylibFunctions class >> getFileExtension: fileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFileModTime: fileName [
+Raylib_Functions class >> getFileModTime: fileName [
 	"Get file modification time (last write time)"
 
 	^ self ffiCall: #( long GetFileModTime #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFileName: filePath [
+Raylib_Functions class >> getFileName: filePath [
 	"Get pointer to filename for a path string"
 
 	^ self ffiCall:
@@ -1445,7 +1445,7 @@ RaylibFunctions class >> getFileName: filePath [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFileNameWithoutExt: filePath [
+Raylib_Functions class >> getFileNameWithoutExt: filePath [
 	"Get filename string without extension (uses static string)"
 
 	^ self ffiCall:
@@ -1453,28 +1453,28 @@ RaylibFunctions class >> getFileNameWithoutExt: filePath [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFontDefault [
+Raylib_Functions class >> getFontDefault [
 	"Get the default Font"
 
 	^ self ffiCall: #( Font GetFontDefault #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getFrameTime [
+Raylib_Functions class >> getFrameTime [
 	"Get time in seconds for last frame drawn (delta time)"
 
 	^ self ffiCall: #( float GetFrameTime #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGamepadAxisCount: gamepad [
+Raylib_Functions class >> getGamepadAxisCount: gamepad [
 	"Get gamepad axis count for a gamepad"
 
 	^ self ffiCall: #( int GetGamepadAxisCount #( int gamepad ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGamepadAxisMovement: gamepad axis: axis [
+Raylib_Functions class >> getGamepadAxisMovement: gamepad axis: axis [
 	"Get axis movement value for a gamepad axis"
 
 	^ self ffiCall:
@@ -1482,7 +1482,7 @@ RaylibFunctions class >> getGamepadAxisMovement: gamepad axis: axis [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGamepadButtonPressed [
+Raylib_Functions class >> getGamepadButtonPressed [
 	"Get the last gamepad button pressed"
 
 	^ self ffiCall: #( int GetGamepadButtonPressed
@@ -1490,35 +1490,35 @@ RaylibFunctions class >> getGamepadButtonPressed [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGamepadName: gamepad [
+Raylib_Functions class >> getGamepadName: gamepad [
 	"Get gamepad internal name id"
 
 	^ self ffiCall: #( const char * GetGamepadName #( int gamepad ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGestureDetected [
+Raylib_Functions class >> getGestureDetected [
 	"Get latest detected gesture"
 
 	^ self ffiCall: #( int GetGestureDetected #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGestureDragAngle [
+Raylib_Functions class >> getGestureDragAngle [
 	"Get gesture drag angle"
 
 	^ self ffiCall: #( float GetGestureDragAngle #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGestureDragVector [
+Raylib_Functions class >> getGestureDragVector [
 	"Get gesture pinch delta"
 
 	^ self ffiCall: #( Vector2 GetGestureDragVector #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGestureHoldDuration [
+Raylib_Functions class >> getGestureHoldDuration [
 	"Get gesture hold time in milliseconds"
 
 	^ self ffiCall: #( float GetGestureHoldDuration
@@ -1526,14 +1526,14 @@ RaylibFunctions class >> getGestureHoldDuration [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGesturePinchAngle [
+Raylib_Functions class >> getGesturePinchAngle [
 	"Get gesture pinch angle"
 
 	^ self ffiCall: #( float GetGesturePinchAngle #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGesturePinchVector [
+Raylib_Functions class >> getGesturePinchVector [
 	"Get gesture pinch delta"
 
 	^ self ffiCall: #( Vector2 GetGesturePinchVector
@@ -1541,14 +1541,14 @@ RaylibFunctions class >> getGesturePinchVector [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getGlyphIndex: font codepoint: codepoint [
+Raylib_Functions class >> getGlyphIndex: font codepoint: codepoint [
 	"Get index position for a unicode character on font"
 
 	^ self ffiCall: #( int GetGlyphIndex #( Font font , int codepoint ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getImageAlphaBorder: image threshold: threshold [
+Raylib_Functions class >> getImageAlphaBorder: image threshold: threshold [
 	"Get image alpha border rectangle"
 
 	^ self ffiCall:
@@ -1556,42 +1556,42 @@ RaylibFunctions class >> getImageAlphaBorder: image threshold: threshold [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getKeyPressed [
+Raylib_Functions class >> getKeyPressed [
 	"Get key pressed (keycode), call it multiple times for keys queued"
 
 	^ self ffiCall: #( int GetKeyPressed #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMeshBoundingBox: mesh [
+Raylib_Functions class >> getMeshBoundingBox: mesh [
 	"Compute mesh bounding box limits"
 
 	^ self ffiCall: #( BoundingBox GetMeshBoundingBox #( Mesh mesh ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorCount [
+Raylib_Functions class >> getMonitorCount [
 	"Get number of connected monitors"
 
 	^ self ffiCall: #( int GetMonitorCount #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorHeight: monitor [
+Raylib_Functions class >> getMonitorHeight: monitor [
 	"Get specified monitor height (max available by monitor)"
 
 	^ self ffiCall: #( int GetMonitorHeight #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorName: monitor [
+Raylib_Functions class >> getMonitorName: monitor [
 	"Get the human-readable, UTF-8 encoded name of the primary monitor"
 
 	^ self ffiCall: #( const char * GetMonitorName #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorPhysicalHeight: monitor [
+Raylib_Functions class >> getMonitorPhysicalHeight: monitor [
 	"Get specified monitor physical height in millimetres"
 
 	^ self ffiCall: #( int GetMonitorPhysicalHeight
@@ -1599,7 +1599,7 @@ RaylibFunctions class >> getMonitorPhysicalHeight: monitor [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorPhysicalWidth: monitor [
+Raylib_Functions class >> getMonitorPhysicalWidth: monitor [
 	"Get specified monitor physical width in millimetres"
 
 	^ self ffiCall: #( int GetMonitorPhysicalWidth
@@ -1607,42 +1607,42 @@ RaylibFunctions class >> getMonitorPhysicalWidth: monitor [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorPosition: monitor [
+Raylib_Functions class >> getMonitorPosition: monitor [
 	"Get specified monitor position"
 
 	^ self ffiCall: #( Vector2 GetMonitorPosition #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorRefreshRate: monitor [
+Raylib_Functions class >> getMonitorRefreshRate: monitor [
 	"Get specified monitor refresh rate"
 
 	^ self ffiCall: #( int GetMonitorRefreshRate #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMonitorWidth: monitor [
+Raylib_Functions class >> getMonitorWidth: monitor [
 	"Get specified monitor width (max available by monitor)"
 
 	^ self ffiCall: #( int GetMonitorWidth #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMouseDelta [
+Raylib_Functions class >> getMouseDelta [
 	"Get mouse delta between frames"
 
 	^ self ffiCall: #( Vector2 GetMouseDelta #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMousePosition [
+Raylib_Functions class >> getMousePosition [
 	"Get mouse position XY"
 
 	^ self ffiCall: #( Vector2 GetMousePosition #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMouseRay: mousePosition camera: camera [
+Raylib_Functions class >> getMouseRay: mousePosition camera: camera [
 	"Get a ray trace from mouse position"
 
 	^ self ffiCall:
@@ -1650,42 +1650,42 @@ RaylibFunctions class >> getMouseRay: mousePosition camera: camera [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMouseWheelMove [
+Raylib_Functions class >> getMouseWheelMove [
 	"Get mouse wheel movement Y"
 
 	^ self ffiCall: #( float GetMouseWheelMove #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMouseX [
+Raylib_Functions class >> getMouseX [
 	"Get mouse position X"
 
 	^ self ffiCall: #( int GetMouseX #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMouseY [
+Raylib_Functions class >> getMouseY [
 	"Get mouse position Y"
 
 	^ self ffiCall: #( int GetMouseY #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMusicTimeLength: music [
+Raylib_Functions class >> getMusicTimeLength: music [
 	"Get music time length (in seconds)"
 
 	^ self ffiCall: #( float GetMusicTimeLength #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getMusicTimePlayed: music [
+Raylib_Functions class >> getMusicTimePlayed: music [
 	"Get current music time played (in seconds)"
 
 	^ self ffiCall: #( float GetMusicTimePlayed #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getPixelColor: srcPtr type: type [
+Raylib_Functions class >> getPixelColor: srcPtr type: type [
 	"Get Color from a source pixel pointer of certain format"
 
 	^ self ffiCall:
@@ -1693,7 +1693,7 @@ RaylibFunctions class >> getPixelColor: srcPtr type: type [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getPixelDataSize: width height: height type: type [
+Raylib_Functions class >> getPixelDataSize: width height: height type: type [
 	"Get pixel data size in bytes for certain format"
 
 	self ffiCall:
@@ -1701,7 +1701,7 @@ RaylibFunctions class >> getPixelDataSize: width height: height type: type [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getPrevDirectoryPath: dirPath [
+Raylib_Functions class >> getPrevDirectoryPath: dirPath [
 	"Get previous directory path for a given path (uses static string)"
 
 	^ self ffiCall:
@@ -1709,14 +1709,14 @@ RaylibFunctions class >> getPrevDirectoryPath: dirPath [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRandomValue: min max: max [
+Raylib_Functions class >> getRandomValue: min max: max [
 	"Get a random value between min and max (both included)"
 
 	^ self ffiCall: #( int GetRandomValue #( int min , int max ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionBox: ray box: box [
+Raylib_Functions class >> getRayCollisionBox: ray box: box [
 	"Get collision info between ray and box"
 
 	^ self ffiCall:
@@ -1725,7 +1725,7 @@ RaylibFunctions class >> getRayCollisionBox: ray box: box [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionMesh: ray mesh: mesh transform: transform [
+Raylib_Functions class >> getRayCollisionMesh: ray mesh: mesh transform: transform [
 	"Get collision info between ray and mesh"
 
 	^ self ffiCall:
@@ -1734,7 +1734,7 @@ RaylibFunctions class >> getRayCollisionMesh: ray mesh: mesh transform: transfor
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionModel: ray model: model [
+Raylib_Functions class >> getRayCollisionModel: ray model: model [
 	"Get collision info between ray and model"
 
 	^ self ffiCall:
@@ -1742,7 +1742,7 @@ RaylibFunctions class >> getRayCollisionModel: ray model: model [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionQuad: ray p1: p1 p2: p2 p3: p3 p4: p4 [
+Raylib_Functions class >> getRayCollisionQuad: ray p1: p1 p2: p2 p3: p3 p4: p4 [
 	"Get collision info between ray and quad"
 
 	^ self ffiCall:
@@ -1751,7 +1751,7 @@ RaylibFunctions class >> getRayCollisionQuad: ray p1: p1 p2: p2 p3: p3 p4: p4 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionSphere: ray center: center radius: radius [
+Raylib_Functions class >> getRayCollisionSphere: ray center: center radius: radius [
 	"Get collision info between ray and sphere"
 
 	^ self ffiCall:
@@ -1760,7 +1760,7 @@ RaylibFunctions class >> getRayCollisionSphere: ray center: center radius: radiu
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getRayCollisionTriangle: ray p1: p1 p2: p2 p3: p3 [
+Raylib_Functions class >> getRayCollisionTriangle: ray p1: p1 p2: p2 p3: p3 [
 	"Get collision info between ray and triangle"
 
 	^ self ffiCall:
@@ -1769,14 +1769,14 @@ RaylibFunctions class >> getRayCollisionTriangle: ray p1: p1 p2: p2 p3: p3 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getScreenHeight [
+Raylib_Functions class >> getScreenHeight [
 	"Get current screen height"
 
 	^ self ffiCall: #( int GetScreenHeight #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getScreenToWorld2D: position camera: camera [
+Raylib_Functions class >> getScreenToWorld2D: position camera: camera [
 	"Get the world space position for a 2d camera screen space position"
 
 	^ self ffiCall:
@@ -1785,14 +1785,14 @@ RaylibFunctions class >> getScreenToWorld2D: position camera: camera [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getScreenWidth [
+Raylib_Functions class >> getScreenWidth [
 	"Get current screen width"
 
 	^ self ffiCall: #( int GetScreenWidth #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getShaderLocation: shader uniformName: uniformName [
+Raylib_Functions class >> getShaderLocation: shader uniformName: uniformName [
 	"Get shader uniform location"
 
 	^ self ffiCall:
@@ -1800,7 +1800,7 @@ RaylibFunctions class >> getShaderLocation: shader uniformName: uniformName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getShaderLocationAttrib: shader attribName: attribName [
+Raylib_Functions class >> getShaderLocationAttrib: shader attribName: attribName [
 	"Get shader attribute location"
 
 	^ self ffiCall:
@@ -1808,70 +1808,70 @@ RaylibFunctions class >> getShaderLocationAttrib: shader attribName: attribName 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getSoundsPlaying [
+Raylib_Functions class >> getSoundsPlaying [
 	"Get number of sounds playing in the multichannel"
 
 	^ self ffiCall: #( int GetSoundsPlaying #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getTime [
+Raylib_Functions class >> getTime [
 	"Get elapsed time in seconds since InitWindow()"
 
 	^ self ffiCall: #( double GetTime #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getTouchPointsCount [
+Raylib_Functions class >> getTouchPointsCount [
 	"Get touch points count"
 
 	^ self ffiCall: #( int GetTouchPointsCount #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getTouchPosition: index [
+Raylib_Functions class >> getTouchPosition: index [
 	"Get touch position XY for a touch point index (relative to screen size)"
 
 	^ self ffiCall: #( Vector2 GetTouchPosition #( int index ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getTouchX [
+Raylib_Functions class >> getTouchX [
 	"Get touch position X for touch point 0 (relative to screen size)"
 
 	^ self ffiCall: #( int GetTouchX #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getTouchY [
+Raylib_Functions class >> getTouchY [
 	"Get touch position Y for touch point 0 (relative to screen size)"
 
 	^ self ffiCall: #( int GetTouchY #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWindowHandle [
+Raylib_Functions class >> getWindowHandle [
 	"Get native window handle"
 
 	^ self ffiCall: #( void * GetWindowHandle #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWindowPosition [
+Raylib_Functions class >> getWindowPosition [
 	"Get window position XY on monitor"
 
 	^ self ffiCall: #( Vector2 GetWindowPosition #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWindowScaleDPI [
+Raylib_Functions class >> getWindowScaleDPI [
 	"Get window scale DPI factor"
 
 	^ self ffiCall: #( Vector2 GetWindowScaleDPI #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWorkingDirectory [
+Raylib_Functions class >> getWorkingDirectory [
 	"Get current working directory (uses static string)"
 
 	^ self ffiCall: #( const char * GetWorkingDirectory
@@ -1879,7 +1879,7 @@ RaylibFunctions class >> getWorkingDirectory [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWorldToScreen2D: position camera: camera [
+Raylib_Functions class >> getWorldToScreen2D: position camera: camera [
 	"Get the screen space position for a 2d camera world space position"
 
 	^ self ffiCall:
@@ -1888,7 +1888,7 @@ RaylibFunctions class >> getWorldToScreen2D: position camera: camera [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWorldToScreen: position camera: camera [
+Raylib_Functions class >> getWorldToScreen: position camera: camera [
 	"Get the screen space position for a 3d world space position"
 
 	^ self ffiCall:
@@ -1896,7 +1896,7 @@ RaylibFunctions class >> getWorldToScreen: position camera: camera [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> getWorldToScreenEx: position camera: camera width: width height: height [
+Raylib_Functions class >> getWorldToScreenEx: position camera: camera width: width height: height [
 	"Get size position for a 3d world space position"
 
 	^ self ffiCall:
@@ -1905,14 +1905,14 @@ RaylibFunctions class >> getWorldToScreenEx: position camera: camera width: widt
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> hideCursor [
+Raylib_Functions class >> hideCursor [
 	"Hides cursor"
 
 	self ffiCall: #( void HideCursor #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageAlphaClear: image color: color threshold: threshold [
+Raylib_Functions class >> imageAlphaClear: image color: color threshold: threshold [
 	"Clear alpha channel to desired color"
 
 	self ffiCall:
@@ -1920,7 +1920,7 @@ RaylibFunctions class >> imageAlphaClear: image color: color threshold: threshol
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageAlphaCrop: image threshold: threshold [
+Raylib_Functions class >> imageAlphaCrop: image threshold: threshold [
 	"Crop image depending on alpha value"
 
 	self ffiCall:
@@ -1928,7 +1928,7 @@ RaylibFunctions class >> imageAlphaCrop: image threshold: threshold [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageAlphaMask: image alphaMask: alphaMask [
+Raylib_Functions class >> imageAlphaMask: image alphaMask: alphaMask [
 	"Apply alpha mask to image"
 
 	self ffiCall:
@@ -1936,14 +1936,14 @@ RaylibFunctions class >> imageAlphaMask: image alphaMask: alphaMask [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageAlphaPremultiply: image [
+Raylib_Functions class >> imageAlphaPremultiply: image [
 	"Premultiply alpha channel"
 
 	self ffiCall: #( void ImageAlphaPremultiply #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageClearBackground: dst color: color [
+Raylib_Functions class >> imageClearBackground: dst color: color [
 	"Clear image background with given color"
 
 	self ffiCall:
@@ -1951,7 +1951,7 @@ RaylibFunctions class >> imageClearBackground: dst color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorBrightness: image brightness: brightness [
+Raylib_Functions class >> imageColorBrightness: image brightness: brightness [
 	"Modify image color: brightness (-255 to 255)"
 
 	self ffiCall:
@@ -1959,7 +1959,7 @@ RaylibFunctions class >> imageColorBrightness: image brightness: brightness [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorContrast: image contrast: contrast [
+Raylib_Functions class >> imageColorContrast: image contrast: contrast [
 	"Modify image color: contrast (-100 to 100)"
 
 	self ffiCall:
@@ -1967,21 +1967,21 @@ RaylibFunctions class >> imageColorContrast: image contrast: contrast [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorGrayscale: image [
+Raylib_Functions class >> imageColorGrayscale: image [
 	"Modify image color: grayscale"
 
 	self ffiCall: #( void ImageColorGrayscale #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorInvert: image [
+Raylib_Functions class >> imageColorInvert: image [
 	"Modify image color: invert"
 
 	self ffiCall: #( void ImageColorInvert #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorReplace: image color: color replace: replace [
+Raylib_Functions class >> imageColorReplace: image color: color replace: replace [
 	"Modify image color: replace color"
 
 	self ffiCall:
@@ -1990,7 +1990,7 @@ RaylibFunctions class >> imageColorReplace: image color: color replace: replace 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageColorTint: image color: color [
+Raylib_Functions class >> imageColorTint: image color: color [
 	"Modify image color: tint"
 
 	self ffiCall:
@@ -1998,14 +1998,14 @@ RaylibFunctions class >> imageColorTint: image color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageCopy: image [
+Raylib_Functions class >> imageCopy: image [
 	"Create an image duplicate (useful for transformations)"
 
 	^ self ffiCall: #( Image ImageCopy #( Image image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageCrop: image crop: crop [
+Raylib_Functions class >> imageCrop: image crop: crop [
 	"Crop an image to a defined rectangle"
 
 	self ffiCall: #( void ImageCrop #( Image * image , Rectangle
@@ -2013,7 +2013,7 @@ RaylibFunctions class >> imageCrop: image crop: crop [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDither: image rBpp: rBpp gBpp: gBpp bBpp: bBpp aBpp: aBpp [
+Raylib_Functions class >> imageDither: image rBpp: rBpp gBpp: gBpp bBpp: bBpp aBpp: aBpp [
 	"Dither image data to 16bpp or lower (Floyd-Steinberg dithering)"
 
 	self ffiCall:
@@ -2022,7 +2022,7 @@ RaylibFunctions class >> imageDither: image rBpp: rBpp gBpp: gBpp bBpp: bBpp aBp
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDraw: dst src: src srcRec: srcRec dstRec: dstRec tint: tint [
+Raylib_Functions class >> imageDraw: dst src: src srcRec: srcRec dstRec: dstRec tint: tint [
 	"Draw a source image within a destination image (tint applied to source)"
 
 	self ffiCall:
@@ -2031,7 +2031,7 @@ RaylibFunctions class >> imageDraw: dst src: src srcRec: srcRec dstRec: dstRec t
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawCircle: dst centerX: centerX centerY: centerY radius: radius color: color [
+Raylib_Functions class >> imageDrawCircle: dst centerX: centerX centerY: centerY radius: radius color: color [
 	"Draw circle within an image"
 
 	self ffiCall:
@@ -2040,7 +2040,7 @@ RaylibFunctions class >> imageDrawCircle: dst centerX: centerX centerY: centerY 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawCircleV: dst center: center radius: radius color: color [
+Raylib_Functions class >> imageDrawCircleV: dst center: center radius: radius color: color [
 	"Draw line within an image (Vector version)"
 
 	self ffiCall:
@@ -2049,7 +2049,7 @@ RaylibFunctions class >> imageDrawCircleV: dst center: center radius: radius col
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawLine: dst startPosX: startPosX startPosY: startPosY endPosX: endPosY color: color [
+Raylib_Functions class >> imageDrawLine: dst startPosX: startPosX startPosY: startPosY endPosX: endPosY color: color [
 	"Draw line within an image"
 
 	self ffiCall:
@@ -2058,7 +2058,7 @@ RaylibFunctions class >> imageDrawLine: dst startPosX: startPosX startPosY: star
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawLineV: dst start: start end: end color: color [
+Raylib_Functions class >> imageDrawLineV: dst start: start end: end color: color [
 	"Draw line within an image (Vector version)"
 
 	self ffiCall:
@@ -2067,7 +2067,7 @@ RaylibFunctions class >> imageDrawLineV: dst start: start end: end color: color 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawPixel: dst posX: posX posY: posY color: color [
+Raylib_Functions class >> imageDrawPixel: dst posX: posX posY: posY color: color [
 	"Draw pixel within an image"
 
 	self ffiCall:
@@ -2076,7 +2076,7 @@ RaylibFunctions class >> imageDrawPixel: dst posX: posX posY: posY color: color 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawPixelV: dst position: position color: color [
+Raylib_Functions class >> imageDrawPixelV: dst position: position color: color [
 	"Draw pixel within an image (Vector version)"
 
 	self ffiCall:
@@ -2085,7 +2085,7 @@ RaylibFunctions class >> imageDrawPixelV: dst position: position color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawRectangle: dst posX: posX posY: posY width: width height: height color: color [
+Raylib_Functions class >> imageDrawRectangle: dst posX: posX posY: posY width: width height: height color: color [
 	"Draw rectangle within an image"
 
 	self ffiCall:
@@ -2094,7 +2094,7 @@ RaylibFunctions class >> imageDrawRectangle: dst posX: posX posY: posY width: wi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawRectangleLines: dst rec: rec thick: thick color: color [
+Raylib_Functions class >> imageDrawRectangleLines: dst rec: rec thick: thick color: color [
 	"Draw rectangle lines within an image"
 
 	self ffiCall:
@@ -2103,7 +2103,7 @@ RaylibFunctions class >> imageDrawRectangleLines: dst rec: rec thick: thick colo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawRectangleRec: dst rec: rec color: color [
+Raylib_Functions class >> imageDrawRectangleRec: dst rec: rec color: color [
 	"Draw rectangle within an image"
 
 	self ffiCall:
@@ -2112,7 +2112,7 @@ RaylibFunctions class >> imageDrawRectangleRec: dst rec: rec color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawRectangleV: dst position: position size: size color: color [
+Raylib_Functions class >> imageDrawRectangleV: dst position: position size: size color: color [
 	"Draw rectangle within an image (Vector version)"
 
 	self ffiCall:
@@ -2121,7 +2121,7 @@ RaylibFunctions class >> imageDrawRectangleV: dst position: position size: size 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawText: dst text: text posX: posX posY: posY fontSize: fontSize color: color [
+Raylib_Functions class >> imageDrawText: dst text: text posX: posX posY: posY fontSize: fontSize color: color [
 	"Create an image from text (default font)"
 
 	self ffiCall:
@@ -2130,7 +2130,7 @@ RaylibFunctions class >> imageDrawText: dst text: text posX: posX posY: posY fon
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageDrawTextEx: dst font: font text: text position: position fontSize: fontSize spacing: spacing tint: tint [
+Raylib_Functions class >> imageDrawTextEx: dst font: font text: text position: position fontSize: fontSize spacing: spacing tint: tint [
 	"Create an image from text (custom sprite font)"
 
 	self ffiCall:
@@ -2140,21 +2140,21 @@ RaylibFunctions class >> imageDrawTextEx: dst font: font text: text position: po
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageFlipHorizontal: image [
+Raylib_Functions class >> imageFlipHorizontal: image [
 	"Flip image horizontally"
 
 	self ffiCall: #( void ImageFlipHorizontal #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageFlipVertical: image [
+Raylib_Functions class >> imageFlipVertical: image [
 	"Flip image vertically"
 
 	self ffiCall: #( void ImageFlipVertical #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageFormat: image newFormat: newFormat [
+Raylib_Functions class >> imageFormat: image newFormat: newFormat [
 	"Convert image data to desired format"
 
 	self ffiCall:
@@ -2162,7 +2162,7 @@ RaylibFunctions class >> imageFormat: image newFormat: newFormat [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageFromImage: image rec: rec [
+Raylib_Functions class >> imageFromImage: image rec: rec [
 	"Create an image from another image piece"
 
 	^ self ffiCall:
@@ -2170,14 +2170,14 @@ RaylibFunctions class >> imageFromImage: image rec: rec [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageMipmaps: image [
+Raylib_Functions class >> imageMipmaps: image [
 	"Compute all mipmap levels for a provided image"
 
 	self ffiCall: #( void ImageMipmaps #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageResize: image newWidth: newWidth newHeight: newHeight [
+Raylib_Functions class >> imageResize: image newWidth: newWidth newHeight: newHeight [
 	"Bicubic scaling algorithm"
 
 	self ffiCall:
@@ -2185,7 +2185,7 @@ RaylibFunctions class >> imageResize: image newWidth: newWidth newHeight: newHei
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageResizeCanvas: image newWidth: newWidth newHeight: newHeight offsetX: offsetX offsetY: offsetY fill: fill [
+Raylib_Functions class >> imageResizeCanvas: image newWidth: newWidth newHeight: newHeight offsetX: offsetX offsetY: offsetY fill: fill [
 	"Resize canvas and fill with color"
 
 	self ffiCall:
@@ -2194,7 +2194,7 @@ RaylibFunctions class >> imageResizeCanvas: image newWidth: newWidth newHeight: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageResizeNN: image newWidth: newWidth newHeight: newHeight [
+Raylib_Functions class >> imageResizeNN: image newWidth: newWidth newHeight: newHeight [
 	"Nearest-Neighbor scaling algorithm"
 
 	self ffiCall:
@@ -2202,21 +2202,21 @@ RaylibFunctions class >> imageResizeNN: image newWidth: newWidth newHeight: newH
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageRotateCCW: image [
+Raylib_Functions class >> imageRotateCCW: image [
 	"Rotate image counter-clockwise 90deg"
 
 	self ffiCall: #( void ImageRotateCCW #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageRotateCW: image [
+Raylib_Functions class >> imageRotateCW: image [
 	"Rotate image clockwise 90deg"
 
 	self ffiCall: #( void ImageRotateCW #( Image * image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageText: text fontSize: fontSize color: color [
+Raylib_Functions class >> imageText: text fontSize: fontSize color: color [
 	"Create an image from text (default font)"
 
 	^ self ffiCall:
@@ -2225,7 +2225,7 @@ RaylibFunctions class >> imageText: text fontSize: fontSize color: color [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageTextEx: font text: text fontSize: fontSize spacing: spacing tint: tint [
+Raylib_Functions class >> imageTextEx: font text: text fontSize: fontSize spacing: spacing tint: tint [
 	"Create an image from text (custom sprite font)"
 
 	^ self ffiCall:
@@ -2234,21 +2234,21 @@ RaylibFunctions class >> imageTextEx: font text: text fontSize: fontSize spacing
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> imageToPOT: image fill: fill [
+Raylib_Functions class >> imageToPOT: image fill: fill [
 	"Convert image to POT (power-of-two)"
 
 	self ffiCall: #( void ImageToPOT #( Image * image , Color fill ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> initAudioDevice [
+Raylib_Functions class >> initAudioDevice [
 	"Initialize audio device and context"
 
 	self ffiCall: #( void InitAudioDevice #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> initWindow: width height: height title: title [
+Raylib_Functions class >> initWindow: width height: height title: title [
 	"Initialize window and OpenGL context"
 
 	self ffiCall:
@@ -2256,14 +2256,14 @@ RaylibFunctions class >> initWindow: width height: height title: title [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isAudioDeviceReady [
+Raylib_Functions class >> isAudioDeviceReady [
 	"Check if audio device has been initialized successfully"
 
 	^ self ffiCall: #( bool IsAudioDeviceReady #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isAudioStreamPlaying: stream [
+Raylib_Functions class >> isAudioStreamPlaying: stream [
 	"Check if audio stream is playing"
 
 	^ self ffiCall:
@@ -2271,7 +2271,7 @@ RaylibFunctions class >> isAudioStreamPlaying: stream [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isAudioStreamProcessed: stream [
+Raylib_Functions class >> isAudioStreamProcessed: stream [
 	"Check if any audio stream buffers requires refill"
 
 	^ self ffiCall:
@@ -2279,28 +2279,28 @@ RaylibFunctions class >> isAudioStreamProcessed: stream [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isCursorHidden [
+Raylib_Functions class >> isCursorHidden [
 	"Check if cursor is not visible"
 
 	^ self ffiCall: #( bool IsCursorHidden #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isCursorOnScreen [
+Raylib_Functions class >> isCursorOnScreen [
 	"Check if cursor is on the screen"
 
 	^ self ffiCall: #( bool IsCursorOnScreen #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isFileDropped [
+Raylib_Functions class >> isFileDropped [
 	"Check if a file has been dropped into window"
 
 	^ self ffiCall: #( bool IsFileDropped #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isFileExtension: fileName ext: ext [
+Raylib_Functions class >> isFileExtension: fileName ext: ext [
 	"Check file extension (including point: .png, .wav)"
 
 	^ self ffiCall:
@@ -2308,14 +2308,14 @@ RaylibFunctions class >> isFileExtension: fileName ext: ext [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadAvailable: gamepad [
+Raylib_Functions class >> isGamepadAvailable: gamepad [
 	"Check if a gamepad is available"
 
 	^ self ffiCall: #( bool IsGamepadAvailable #( int gamepad ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadButtonDown: gamepad button: button [
+Raylib_Functions class >> isGamepadButtonDown: gamepad button: button [
 	"Check if a gamepad button is being pressed"
 
 	^ self ffiCall:
@@ -2323,7 +2323,7 @@ RaylibFunctions class >> isGamepadButtonDown: gamepad button: button [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadButtonPressed: gamepad button: button [
+Raylib_Functions class >> isGamepadButtonPressed: gamepad button: button [
 	"Check if a gamepad button has been pressed once"
 
 	^ self ffiCall:
@@ -2331,7 +2331,7 @@ RaylibFunctions class >> isGamepadButtonPressed: gamepad button: button [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadButtonReleased: gamepad button: button [
+Raylib_Functions class >> isGamepadButtonReleased: gamepad button: button [
 	"Check if a gamepad button has been released once"
 
 	^ self ffiCall:
@@ -2339,7 +2339,7 @@ RaylibFunctions class >> isGamepadButtonReleased: gamepad button: button [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadButtonUp: gamepad button: button [
+Raylib_Functions class >> isGamepadButtonUp: gamepad button: button [
 	"Check if a gamepad button is NOT being pressed"
 
 	^ self ffiCall:
@@ -2347,7 +2347,7 @@ RaylibFunctions class >> isGamepadButtonUp: gamepad button: button [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGamepadName: gamepad gamepadname: gamepadname [
+Raylib_Functions class >> isGamepadName: gamepad gamepadname: gamepadname [
 	"Get gamepad internal name id"
 
 	^ self ffiCall:
@@ -2355,42 +2355,42 @@ RaylibFunctions class >> isGamepadName: gamepad gamepadname: gamepadname [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isGestureDetected: gesture [
+Raylib_Functions class >> isGestureDetected: gesture [
 	"Check if a gesture have been detected"
 
 	^ self ffiCall: #( bool IsGestureDetected #( int gesture ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isKeyDown: key [
+Raylib_Functions class >> isKeyDown: key [
 	"Check if a key is being pressed"
 
 	^ self ffiCall: #( bool IsKeyDown #( int key ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isKeyPressed: key [
+Raylib_Functions class >> isKeyPressed: key [
 	"Check if a key has been pressed once"
 
 	^ self ffiCall: #( bool IsKeyPressed #( int key ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isKeyReleased: key [
+Raylib_Functions class >> isKeyReleased: key [
 	"Check if a key has been released once"
 
 	^ self ffiCall: #( bool IsKeyReleased #( int key ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isKeyUp: key [
+Raylib_Functions class >> isKeyUp: key [
 	"Check if a key is NOT being pressed"
 
 	^ self ffiCall: #( bool IsKeyUp #( int key ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isModelAnimationValid: model anim: anim [
+Raylib_Functions class >> isModelAnimationValid: model anim: anim [
 	"Check model animation skeleton match"
 
 	^ self ffiCall:
@@ -2399,105 +2399,105 @@ RaylibFunctions class >> isModelAnimationValid: model anim: anim [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isMouseButtonDown: button [
+Raylib_Functions class >> isMouseButtonDown: button [
 	"Check if a mouse button is being pressed"
 
 	^ self ffiCall: #( bool IsMouseButtonDown #( int button ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isMouseButtonPressed: button [
+Raylib_Functions class >> isMouseButtonPressed: button [
 	"Check if a mouse button has been pressed once"
 
 	^ self ffiCall: #( bool IsMouseButtonPressed #( int button ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isMouseButtonReleased: button [
+Raylib_Functions class >> isMouseButtonReleased: button [
 	"Check if a mouse button has been released once"
 
 	^ self ffiCall: #( bool IsMouseButtonReleased #( int button ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isMouseButtonUp: button [
+Raylib_Functions class >> isMouseButtonUp: button [
 	"Check if a mouse button is NOT being pressed"
 
 	^ self ffiCall: #( bool IsMouseButtonUp #( int button ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isMusicStreamPlaying: music [
+Raylib_Functions class >> isMusicStreamPlaying: music [
 	"Check if music is playing"
 
 	^ self ffiCall: #( bool IsMusicStreamPlaying #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isSoundPlaying: sound [
+Raylib_Functions class >> isSoundPlaying: sound [
 	"Check if a sound is currently playing"
 
 	^ self ffiCall: #( bool IsSoundPlaying #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowFocused [
+Raylib_Functions class >> isWindowFocused [
 	"Check if window is currently focused (only PLATFORM_DESKTOP)"
 
 	^ self ffiCall: #( bool IsWindowFocused #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowFullscreen [
+Raylib_Functions class >> isWindowFullscreen [
 	"Check if window is currently fullscreen"
 
 	^ self ffiCall: #( bool IsWindowFullscreen #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowHidden [
+Raylib_Functions class >> isWindowHidden [
 	"Check if window is currently hidden (only PLATFORM_DESKTOP)"
 
 	^ self ffiCall: #( bool IsWindowHidden #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowMaximized [
+Raylib_Functions class >> isWindowMaximized [
 	"Check if window is currently maximized (only PLATFORM_DESKTOP)"
 
 	^ self ffiCall: #( bool IsWindowMaximized #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowMinimized [
+Raylib_Functions class >> isWindowMinimized [
 	"Check if window is currently minimized (only PLATFORM_DESKTOP)"
 
 	^ self ffiCall: #( bool IsWindowMinimized #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowReady [
+Raylib_Functions class >> isWindowReady [
 	"Check if window has been initialized successfully"
 
 	^ self ffiCall: #( bool IsWindowReady #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowResized [
+Raylib_Functions class >> isWindowResized [
 	"Check if window has been resized last frame"
 
 	^ self ffiCall: #( bool IsWindowResized #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> isWindowState: flag [
+Raylib_Functions class >> isWindowState: flag [
 	"Check if one specific window flag is enabled"
 
 	^ self ffiCall: #( bool IsWindowState #( unsigned int flag ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadAudioStream: sampleRate sampleSize: sampleSize channels: channels [
+Raylib_Functions class >> loadAudioStream: sampleRate sampleSize: sampleSize channels: channels [
 	"Load audio stream (to stream raw audio pcm data)"
 
 	^ self ffiCall:
@@ -2506,7 +2506,7 @@ RaylibFunctions class >> loadAudioStream: sampleRate sampleSize: sampleSize chan
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadCodepoints: text count: count [
+Raylib_Functions class >> loadCodepoints: text count: count [
 	"Load all codepoints from a UTF8 text string, codepoints count returned by parameter"
 
 	^ self ffiCall:
@@ -2514,7 +2514,7 @@ RaylibFunctions class >> loadCodepoints: text count: count [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFileData: fileName bytesRead: bytesRead [
+Raylib_Functions class >> loadFileData: fileName bytesRead: bytesRead [
 	"Load file data as byte array (read)"
 
 	^ self ffiCall:
@@ -2523,21 +2523,21 @@ RaylibFunctions class >> loadFileData: fileName bytesRead: bytesRead [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFileText: fileName [
+Raylib_Functions class >> loadFileText: fileName [
 	"Load text data from file (read), returns a '\0' terminated string"
 
 	^ self ffiCall: #( char * LoadFileText #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFont: fileName [
+Raylib_Functions class >> loadFont: fileName [
 	"Load font from file into GPU memory (VRAM)"
 
 	^ self ffiCall: #( Font LoadFont #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFontData: fileData dataSize: dataSize fontSize: fontSize fontChars: fontChars charsCount: charsCount type: type [
+Raylib_Functions class >> loadFontData: fileData dataSize: dataSize fontSize: fontSize fontChars: fontChars charsCount: charsCount type: type [
 	"Load font data for further use"
 
 	^ self ffiCall:
@@ -2547,7 +2547,7 @@ RaylibFunctions class >> loadFontData: fileData dataSize: dataSize fontSize: fon
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFontEx: fileName fontSize: fontSize fontChars: fontChars charsCount: charsCount [
+Raylib_Functions class >> loadFontEx: fileName fontSize: fontSize fontChars: fontChars charsCount: charsCount [
 	"Load font from file with extended parameters"
 
 	^ self ffiCall:
@@ -2556,7 +2556,7 @@ RaylibFunctions class >> loadFontEx: fileName fontSize: fontSize fontChars: font
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFontFromImage: image key: key firstChar: firstChar [
+Raylib_Functions class >> loadFontFromImage: image key: key firstChar: firstChar [
 	"Load font from Image (XNA style)"
 
 	^ self ffiCall:
@@ -2564,7 +2564,7 @@ RaylibFunctions class >> loadFontFromImage: image key: key firstChar: firstChar 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadFontFromMemory: fileType fileData: fileData dataSize: dataSize fontSize: fontSize fontChars: fontChars charsCount: charsCount [
+Raylib_Functions class >> loadFontFromMemory: fileType fileData: fileData dataSize: dataSize fontSize: fontSize fontChars: fontChars charsCount: charsCount [
 	"Load font from memory buffer, fileType refers to extension: i.e. '.ttf'"
 
 	^ self ffiCall:
@@ -2574,14 +2574,14 @@ RaylibFunctions class >> loadFontFromMemory: fileType fileData: fileData dataSiz
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImage: fileName [
+Raylib_Functions class >> loadImage: fileName [
 	"Load image from file into CPU memory (RAM)"
 
 	^ self ffiCall: #( Image LoadImage #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageAnim: fileName frames: frames [
+Raylib_Functions class >> loadImageAnim: fileName frames: frames [
 	"Load image sequence from file (frames appended to image.data)"
 
 	^ self ffiCall:
@@ -2589,14 +2589,14 @@ RaylibFunctions class >> loadImageAnim: fileName frames: frames [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageColors: image [
+Raylib_Functions class >> loadImageColors: image [
 	"Load color data from image as a Color array (RGBA - 32bit)"
 
 	^ self ffiCall: #( Color * LoadImageColors #( Image image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageFromMemory: fileType fileData: fileData dataSize: dataSize [
+Raylib_Functions class >> loadImageFromMemory: fileType fileData: fileData dataSize: dataSize [
 	"Load image from memory buffer, fileType refers to extension: i.e. '.png'"
 
 	^ self ffiCall:
@@ -2605,14 +2605,14 @@ RaylibFunctions class >> loadImageFromMemory: fileType fileData: fileData dataSi
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageFromScreen [
+Raylib_Functions class >> loadImageFromScreen [
 	"Load image from screen buffer and (screenshot)"
 
 	^ self ffiCall: #( Image LoadImageFromScreen #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageFromTexture: texture [
+Raylib_Functions class >> loadImageFromTexture: texture [
 	"Load image from GPU texture data"
 
 	^ self ffiCall:
@@ -2620,7 +2620,7 @@ RaylibFunctions class >> loadImageFromTexture: texture [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImagePalette: image maxPaletteSize: maxPaletteSize colorsCount: colorsCount [
+Raylib_Functions class >> loadImagePalette: image maxPaletteSize: maxPaletteSize colorsCount: colorsCount [
 	"Load colors palette from image as a Color array (RGBA - 32bit)"
 
 	^ self ffiCall:
@@ -2629,7 +2629,7 @@ RaylibFunctions class >> loadImagePalette: image maxPaletteSize: maxPaletteSize 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadImageRaw: fileName width: width height: height type: type headerSize: headerSize [
+Raylib_Functions class >> loadImageRaw: fileName width: width height: height type: type headerSize: headerSize [
 	"Load image from RAW file data"
 
 	^ self ffiCall:
@@ -2638,7 +2638,7 @@ RaylibFunctions class >> loadImageRaw: fileName width: width height: height type
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadMaterials: fileName materialCount: materialCount [
+Raylib_Functions class >> loadMaterials: fileName materialCount: materialCount [
 	"Load materials from model file"
 
 	^ self ffiCall:
@@ -2646,14 +2646,14 @@ RaylibFunctions class >> loadMaterials: fileName materialCount: materialCount [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadModel: fileName [
+Raylib_Functions class >> loadModel: fileName [
 	"Load model from files (meshes and materials)"
 
 	^ self ffiCall: #( Model LoadModel #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadModelAnimations: fileName animsCount: animsCount [
+Raylib_Functions class >> loadModelAnimations: fileName animsCount: animsCount [
 	"Load model animations from file"
 
 	^ self ffiCall:
@@ -2662,21 +2662,21 @@ RaylibFunctions class >> loadModelAnimations: fileName animsCount: animsCount [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadModelFromMesh: mesh [
+Raylib_Functions class >> loadModelFromMesh: mesh [
 	"Load model from generated mesh (default material)"
 
 	^ self ffiCall: #( Model LoadModelFromMesh #( Mesh mesh ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadMusicStream: fileName [
+Raylib_Functions class >> loadMusicStream: fileName [
 	"Load music stream from file"
 
 	^ self ffiCall: #( Music LoadMusicStream #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadMusicStreamFromMemory: fileType data: data dataSize: dataSize [
+Raylib_Functions class >> loadMusicStreamFromMemory: fileType data: data dataSize: dataSize [
 	"Load music stream from data"
 
 	^ self ffiCall:
@@ -2685,7 +2685,7 @@ RaylibFunctions class >> loadMusicStreamFromMemory: fileType data: data dataSize
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadRenderTexture: width height: height [
+Raylib_Functions class >> loadRenderTexture: width height: height [
 	"Load texture for rendering (framebuffer)"
 
 	^ self ffiCall:
@@ -2693,7 +2693,7 @@ RaylibFunctions class >> loadRenderTexture: width height: height [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadShader: vsFileName fsFileName: fsFileName [
+Raylib_Functions class >> loadShader: vsFileName fsFileName: fsFileName [
 	"Load shader from files and bind default locations"
 
 	^ self ffiCall:
@@ -2701,7 +2701,7 @@ RaylibFunctions class >> loadShader: vsFileName fsFileName: fsFileName [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadShaderFromMemory: vsCode fsCode: fsCode [
+Raylib_Functions class >> loadShaderFromMemory: vsCode fsCode: fsCode [
 	"Load shader from code strings and bind default locations"
 
 	^ self ffiCall:
@@ -2710,35 +2710,35 @@ RaylibFunctions class >> loadShaderFromMemory: vsCode fsCode: fsCode [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadSound: fileName [
+Raylib_Functions class >> loadSound: fileName [
 	"Load sound from file"
 
 	^ self ffiCall: #( Sound LoadSound #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadSoundFromWave: wave [
+Raylib_Functions class >> loadSoundFromWave: wave [
 	"Load sound from wave data"
 
 	^ self ffiCall: #( Sound LoadSoundFromWave #( Wave wave ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadStorageValue: position [
+Raylib_Functions class >> loadStorageValue: position [
 	"Load integer value from storage file (from defined position)"
 
 	^ self ffiCall: #( int LoadStorageValue #( unsigned int position ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadTexture: fileName [
+Raylib_Functions class >> loadTexture: fileName [
 	"Load texture from file into GPU memory (VRAM)"
 
 	^ self ffiCall: #( Texture2D LoadTexture #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadTextureCubemap: image cubeLayout: cubeLayout [
+Raylib_Functions class >> loadTextureCubemap: image cubeLayout: cubeLayout [
 	"Load cubemap from image, multiple image cubemap layouts supported"
 
 	^ self ffiCall:
@@ -2746,7 +2746,7 @@ RaylibFunctions class >> loadTextureCubemap: image cubeLayout: cubeLayout [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadTextureCubemap: image layout: cubeLayout [
+Raylib_Functions class >> loadTextureCubemap: image layout: cubeLayout [
 	"Load cubemap from image, multiple image cubemap layouts supported"
 
 	^ self ffiCall:
@@ -2754,7 +2754,7 @@ RaylibFunctions class >> loadTextureCubemap: image layout: cubeLayout [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadTextureFromImage: image [
+Raylib_Functions class >> loadTextureFromImage: image [
 	"Load texture from image data"
 
 	^ self ffiCall: #( Texture2D LoadTextureFromImage
@@ -2762,7 +2762,7 @@ RaylibFunctions class >> loadTextureFromImage: image [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadVrStereoConfig: device [
+Raylib_Functions class >> loadVrStereoConfig: device [
 	"Load VR stereo config for VR simulator device parameters"
 
 	^ self ffiCall:
@@ -2770,14 +2770,14 @@ RaylibFunctions class >> loadVrStereoConfig: device [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadWave: fileName [
+Raylib_Functions class >> loadWave: fileName [
 	"Load wave data from file"
 
 	^ self ffiCall: #( Wave LoadWave #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadWaveFromMemory: fileType fileData: fileData dataSize: dataSize [
+Raylib_Functions class >> loadWaveFromMemory: fileType fileData: fileData dataSize: dataSize [
 	"Load wave from memory buffer, fileType refers to extension: i.e. '.wav'"
 
 	^ self ffiCall:
@@ -2786,21 +2786,21 @@ RaylibFunctions class >> loadWaveFromMemory: fileType fileData: fileData dataSiz
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> loadWaveSamples: wave [
+Raylib_Functions class >> loadWaveSamples: wave [
 	"Load samples data from wave as a floats array"
 
 	^ self ffiCall: #( float * LoadWaveSamples #( Wave wave ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> maximizeWindow [
+Raylib_Functions class >> maximizeWindow [
 	"Set window state: maximized, if resizable (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void MaximizeWindow #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> measureText: text fontSize: fontSize [
+Raylib_Functions class >> measureText: text fontSize: fontSize [
 	"Measure string width for default font"
 
 	^ self ffiCall:
@@ -2808,7 +2808,7 @@ RaylibFunctions class >> measureText: text fontSize: fontSize [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> measureTextEx: font text: text fontSize: fontSize spacing: spacing [
+Raylib_Functions class >> measureTextEx: font text: text fontSize: fontSize spacing: spacing [
 	"Measure string size for Font"
 
 	^ self ffiCall:
@@ -2817,126 +2817,126 @@ RaylibFunctions class >> measureTextEx: font text: text fontSize: fontSize spaci
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> memAlloc: size [
+Raylib_Functions class >> memAlloc: size [
 	"Internal memory allocator"
 
 	^ self ffiCall: #( void * MemAlloc #( int size ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> memFree: ptr [
+Raylib_Functions class >> memFree: ptr [
 	"Internal memory free"
 
 	self ffiCall: #( void MemFree #( void * ptr ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> memRealloc: ptr size: size [
+Raylib_Functions class >> memRealloc: ptr size: size [
 	"Internal memory reallocator"
 
 	^ self ffiCall: #( void * MemRealloc #( void * ptr , int size ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> minimizeWindow [
+Raylib_Functions class >> minimizeWindow [
 	"Set window state: minimized, if resizable (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void MinimizeWindow #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> openURL: url [
+Raylib_Functions class >> openURL: url [
 	"Open URL with default system browser (if available)"
 
 	self ffiCall: #( void OpenURL #( const char * url ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> pauseAudioStream: stream [
+Raylib_Functions class >> pauseAudioStream: stream [
 	"Pause audio stream"
 
 	self ffiCall: #( void PauseAudioStream #( AudioStream stream ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> pauseMusicStream: music [
+Raylib_Functions class >> pauseMusicStream: music [
 	"Pause music playing"
 
 	self ffiCall: #( void PauseMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> pauseSound: sound [
+Raylib_Functions class >> pauseSound: sound [
 	"Pause a sound"
 
 	self ffiCall: #( void PauseSound #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> playAudioStream: stream [
+Raylib_Functions class >> playAudioStream: stream [
 	"Play audio stream"
 
 	self ffiCall: #( void PlayAudioStream #( AudioStream stream ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> playMusicStream: music [
+Raylib_Functions class >> playMusicStream: music [
 	"Start music playing"
 
 	self ffiCall: #( void PlayMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> playSound: sound [
+Raylib_Functions class >> playSound: sound [
 	"Play a sound"
 
 	self ffiCall: #( void PlaySound #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> playSoundMulti: sound [
+Raylib_Functions class >> playSoundMulti: sound [
 	"Play a sound (using multichannel buffer pool)"
 
 	self ffiCall: #( void PlaySoundMulti #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> pollInputEvents [
+Raylib_Functions class >> pollInputEvents [
 	"Register all input events"
 
 	self ffiCall: #( void PollInputEvents #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> restoreWindow [
+Raylib_Functions class >> restoreWindow [
 	"Set window state: not minimized/maximized (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void RestoreWindow #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> resumeAudioStream: stream [
+Raylib_Functions class >> resumeAudioStream: stream [
 	"Resume audio stream"
 
 	self ffiCall: #( void ResumeAudioStream #( AudioStream stream ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> resumeMusicStream: music [
+Raylib_Functions class >> resumeMusicStream: music [
 	"Resume playing paused music"
 
 	self ffiCall: #( void ResumeMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> resumeSound: sound [
+Raylib_Functions class >> resumeSound: sound [
 	"Resume a paused sound"
 
 	self ffiCall: #( void ResumeSound #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> saveFileData: fileName data: data bytesToWrite: bytesToWrite [
+Raylib_Functions class >> saveFileData: fileName data: data bytesToWrite: bytesToWrite [
 	"Save data to file from byte array (write), returns true on success"
 
 	^ self ffiCall:
@@ -2945,7 +2945,7 @@ RaylibFunctions class >> saveFileData: fileName data: data bytesToWrite: bytesTo
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> saveFileText: fileName text: text [
+Raylib_Functions class >> saveFileText: fileName text: text [
 	"Save text data to file (write), string must be '\0' terminated, returns true on success"
 
 	^ self ffiCall:
@@ -2953,7 +2953,7 @@ RaylibFunctions class >> saveFileText: fileName text: text [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> saveStorageValue: position value: value [
+Raylib_Functions class >> saveStorageValue: position value: value [
 	"Save integer value to storage file (to defined position), returns true on success"
 
 	^ self ffiCall:
@@ -2961,7 +2961,7 @@ RaylibFunctions class >> saveStorageValue: position value: value [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setAudioStreamBufferSizeDefault: size [
+Raylib_Functions class >> setAudioStreamBufferSizeDefault: size [
 	"Default size for new audio streams"
 
 	self ffiCall: #( void SetAudioStreamBufferSizeDefault
@@ -2969,7 +2969,7 @@ RaylibFunctions class >> setAudioStreamBufferSizeDefault: size [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setAudioStreamPitch: stream pitch: pitch [
+Raylib_Functions class >> setAudioStreamPitch: stream pitch: pitch [
 	"Set pitch for audio stream (1.0 is base level)"
 
 	self ffiCall:
@@ -2977,7 +2977,7 @@ RaylibFunctions class >> setAudioStreamPitch: stream pitch: pitch [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setAudioStreamVolume: stream volume: volume [
+Raylib_Functions class >> setAudioStreamVolume: stream volume: volume [
 	"Set volume for audio stream (1.0 is max level)"
 
 	self ffiCall:
@@ -2985,21 +2985,21 @@ RaylibFunctions class >> setAudioStreamVolume: stream volume: volume [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setCameraAltControl: keyAlt [
+Raylib_Functions class >> setCameraAltControl: keyAlt [
 	"Set camera alt key to combine with mouse movement (free camera)"
 
 	self ffiCall: #( void SetCameraAltControl #( int keyAlt ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setCameraMode: camera mode: mode [
+Raylib_Functions class >> setCameraMode: camera mode: mode [
 	"Set camera mode (multiple camera modes available)"
 
 	self ffiCall: #( void SetCameraMode #( Camera camera , int mode ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setCameraMoveControls: keyFront keyBack: keyBack keyRight: keyRight keyLeft: keyLeft keyUp: keyUp keyDown: keyDown [
+Raylib_Functions class >> setCameraMoveControls: keyFront keyBack: keyBack keyRight: keyRight keyLeft: keyLeft keyUp: keyUp keyDown: keyDown [
 	"Set camera move controls (1st person and 3rd person cameras)"
 
 	self ffiCall:
@@ -3008,14 +3008,14 @@ RaylibFunctions class >> setCameraMoveControls: keyFront keyBack: keyBack keyRig
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setCameraPanControl: keyPan [
+Raylib_Functions class >> setCameraPanControl: keyPan [
 	"Set camera pan key to combine with mouse movement (free camera)"
 
 	self ffiCall: #( void SetCameraPanControl #( int keyPan ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setCameraSmoothZoomControl: keySmoothZoom [
+Raylib_Functions class >> setCameraSmoothZoomControl: keySmoothZoom [
 	"Set camera smooth zoom key to combine with mouse (free camera)"
 
 	self ffiCall:
@@ -3023,28 +3023,28 @@ RaylibFunctions class >> setCameraSmoothZoomControl: keySmoothZoom [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setClipboardText: text [
+Raylib_Functions class >> setClipboardText: text [
 	"Set clipboard text content"
 
 	self ffiCall: #( void SetClipboardText #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setConfigFlags: flags [
+Raylib_Functions class >> setConfigFlags: flags [
 	"Setup init configuration flags (view FLAGS)"
 
 	self ffiCall: #( void SetConfigFlags #( unsigned int flags ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setExitKey: key [
+Raylib_Functions class >> setExitKey: key [
 	"Set a custom key to exit program (default is ESC)"
 
 	self ffiCall: #( void SetExitKey #( int key ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setGamepadMappings: mappings [
+Raylib_Functions class >> setGamepadMappings: mappings [
 	"Set internal gamepad mappings (SDL_GameControllerDB)"
 
 	^ self ffiCall:
@@ -3052,14 +3052,14 @@ RaylibFunctions class >> setGamepadMappings: mappings [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setGesturesEnabled: flags [
+Raylib_Functions class >> setGesturesEnabled: flags [
 	"Enable a set of gestures using flags"
 
 	self ffiCall: #( void SetGesturesEnabled #( unsigned int flags ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setLoadFileDataCallback: callback [
+Raylib_Functions class >> setLoadFileDataCallback: callback [
 	"Set custom file binary data loader"
 
 	self ffiCall:
@@ -3068,7 +3068,7 @@ RaylibFunctions class >> setLoadFileDataCallback: callback [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setLoadFileTextCallback: callback [
+Raylib_Functions class >> setLoadFileTextCallback: callback [
 	"Set custom file text data loader"
 
 	self ffiCall:
@@ -3077,14 +3077,14 @@ RaylibFunctions class >> setLoadFileTextCallback: callback [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMasterVolume: volume [
+Raylib_Functions class >> setMasterVolume: volume [
 	"Set master volume (listener)"
 
 	self ffiCall: #( void SetMasterVolume #( float volume ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMaterialTexture: material mapType: mapType texture: texture [
+Raylib_Functions class >> setMaterialTexture: material mapType: mapType texture: texture [
 	"Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)"
 
 	self ffiCall:
@@ -3093,7 +3093,7 @@ RaylibFunctions class >> setMaterialTexture: material mapType: mapType texture: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setModelMeshMaterial: model meshId: meshId materialId: materialId [
+Raylib_Functions class >> setModelMeshMaterial: model meshId: meshId materialId: materialId [
 	"Set material for a mesh"
 
 	self ffiCall:
@@ -3101,28 +3101,28 @@ RaylibFunctions class >> setModelMeshMaterial: model meshId: meshId materialId: 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMouseCursor: cursor [
+Raylib_Functions class >> setMouseCursor: cursor [
 	"Set mouse cursor"
 
 	self ffiCall: #( void SetMouseCursor #( int cursor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMouseOffset: offsetX offsetY: offsetY [
+Raylib_Functions class >> setMouseOffset: offsetX offsetY: offsetY [
 	"Set mouse offset"
 
 	self ffiCall: #( void SetMouseOffset #( int offsetX , int offsetY ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMousePosition: x y: y [
+Raylib_Functions class >> setMousePosition: x y: y [
 	"Set mouse position XY"
 
 	self ffiCall: #( void SetMousePosition #( int x , int y ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMouseScale: scaleX scaleY: scaleY [
+Raylib_Functions class >> setMouseScale: scaleX scaleY: scaleY [
 	"Set mouse scaling"
 
 	self ffiCall:
@@ -3130,14 +3130,14 @@ RaylibFunctions class >> setMouseScale: scaleX scaleY: scaleY [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMusicPitch: music pitch: pitch [
+Raylib_Functions class >> setMusicPitch: music pitch: pitch [
 	"Set pitch for a music (1.0 is base level)"
 
 	self ffiCall: #( void SetMusicPitch #( Music music , float pitch ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setMusicVolume: music volume: volume [
+Raylib_Functions class >> setMusicVolume: music volume: volume [
 	"Set volume for music (1.0 is max level)"
 
 	self ffiCall:
@@ -3145,7 +3145,7 @@ RaylibFunctions class >> setMusicVolume: music volume: volume [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setPixelColor: dstPtr color: color type: type [
+Raylib_Functions class >> setPixelColor: dstPtr color: color type: type [
 	"Set color formatted into destination pixel pointer"
 
 	self ffiCall:
@@ -3153,7 +3153,7 @@ RaylibFunctions class >> setPixelColor: dstPtr color: color type: type [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setSaveFileDataCallback: callback [
+Raylib_Functions class >> setSaveFileDataCallback: callback [
 	"Set custom file binary data saver"
 
 	self ffiCall:
@@ -3162,7 +3162,7 @@ RaylibFunctions class >> setSaveFileDataCallback: callback [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setSaveFileTextCallback: callback [
+Raylib_Functions class >> setSaveFileTextCallback: callback [
 	"Set custom file text data loader"
 
 	self ffiCall:
@@ -3171,7 +3171,7 @@ RaylibFunctions class >> setSaveFileTextCallback: callback [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setShaderValue: shader locIndex: locIndex value: value uniformType: uniformType [
+Raylib_Functions class >> setShaderValue: shader locIndex: locIndex value: value uniformType: uniformType [
 	"Set shader uniform value"
 
 	self ffiCall:
@@ -3180,7 +3180,7 @@ RaylibFunctions class >> setShaderValue: shader locIndex: locIndex value: value 
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setShaderValueMatrix: shader locIndex: locIndex mat: mat [
+Raylib_Functions class >> setShaderValueMatrix: shader locIndex: locIndex mat: mat [
 	"Set shader uniform value (matrix 4x4)"
 
 	self ffiCall:
@@ -3189,7 +3189,7 @@ RaylibFunctions class >> setShaderValueMatrix: shader locIndex: locIndex mat: ma
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setShaderValueTexture: shader locIndex: locIndex texture: texture [
+Raylib_Functions class >> setShaderValueTexture: shader locIndex: locIndex texture: texture [
 	"Set shader uniform value for texture (sampler2d)"
 
 	self ffiCall:
@@ -3198,7 +3198,7 @@ RaylibFunctions class >> setShaderValueTexture: shader locIndex: locIndex textur
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setShaderValueV: shader locIndex: locIndex value: value uniformType: uniformType count: count [
+Raylib_Functions class >> setShaderValueV: shader locIndex: locIndex value: value uniformType: uniformType count: count [
 	"Set shader uniform value vector"
 
 	self ffiCall:
@@ -3207,7 +3207,7 @@ RaylibFunctions class >> setShaderValueV: shader locIndex: locIndex value: value
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setShapesTexture: texture source: source [
+Raylib_Functions class >> setShapesTexture: texture source: source [
 	"Set texture and rectangle to be used on shapes drawing"
 
 	self ffiCall:
@@ -3215,14 +3215,14 @@ RaylibFunctions class >> setShapesTexture: texture source: source [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setSoundPitch: sound pitch: pitch [
+Raylib_Functions class >> setSoundPitch: sound pitch: pitch [
 	"Set pitch for a sound (1.0 is base level)"
 
 	self ffiCall: #( void SetSoundPitch #( Sound sound , float pitch ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setSoundVolume: sound volume: volume [
+Raylib_Functions class >> setSoundVolume: sound volume: volume [
 	"Set volume for a sound (1.0 is max level)"
 
 	self ffiCall:
@@ -3230,14 +3230,14 @@ RaylibFunctions class >> setSoundVolume: sound volume: volume [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setTargetFPS: fps [
+Raylib_Functions class >> setTargetFPS: fps [
 	"Set target FPS (maximum)"
 
 	self ffiCall: #( void SetTargetFPS #( int fps ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setTextureFilter: texture filter: filter [
+Raylib_Functions class >> setTextureFilter: texture filter: filter [
 	"Set texture scaling filter mode"
 
 	self ffiCall:
@@ -3245,7 +3245,7 @@ RaylibFunctions class >> setTextureFilter: texture filter: filter [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setTextureWrap: texture wrap: wrap [
+Raylib_Functions class >> setTextureWrap: texture wrap: wrap [
 	"Set texture wrapping mode"
 
 	self ffiCall:
@@ -3253,7 +3253,7 @@ RaylibFunctions class >> setTextureWrap: texture wrap: wrap [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setTraceLogCallback: callback [
+Raylib_Functions class >> setTraceLogCallback: callback [
 	"Set custom trace log"
 
 	self ffiCall:
@@ -3261,112 +3261,112 @@ RaylibFunctions class >> setTraceLogCallback: callback [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setTraceLogLevel: logLevel [
+Raylib_Functions class >> setTraceLogLevel: logLevel [
 	"Set the current threshold (minimum) log level"
 
 	self ffiCall: #( void SetTraceLogLevel #( int logLevel ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowIcon: image [
+Raylib_Functions class >> setWindowIcon: image [
 	"Set icon for window (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void SetWindowIcon #( Image image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowMinSize: widht height: height [
+Raylib_Functions class >> setWindowMinSize: widht height: height [
 	"Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)"
 
 	self ffiCall: #( void SetWindowMinSize #( int width , int height ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowMonitor: monitor [
+Raylib_Functions class >> setWindowMonitor: monitor [
 	"Set monitor for the current window (fullscreen mode)"
 
 	self ffiCall: #( void SetWindowMonitor #( int monitor ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowPosition: x y: y [
+Raylib_Functions class >> setWindowPosition: x y: y [
 	"Set window position on screen (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void SetWindowPosition #( int x , int y ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowSize: widht height: height [
+Raylib_Functions class >> setWindowSize: widht height: height [
 	"Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)"
 
 	self ffiCall: #( void SetWindowSize #( int width , int height ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowState: flags [
+Raylib_Functions class >> setWindowState: flags [
 	"Set window configuration state using flags"
 
 	self ffiCall: #( void SetWindowState #( unsigned int flags ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> setWindowTitle [
+Raylib_Functions class >> setWindowTitle [
 	"Set title for window (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void SetWindowTitle #( const char * title ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> showCursor [
+Raylib_Functions class >> showCursor [
 	"Shows cursor"
 
 	self ffiCall: #( void ShowCursor #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> stopAudioStream: stream [
+Raylib_Functions class >> stopAudioStream: stream [
 	"Stop audio stream"
 
 	self ffiCall: #( void StopAudioStream #( AudioStream stream ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> stopMusicStream: music [
+Raylib_Functions class >> stopMusicStream: music [
 	"Stop music playing"
 
 	self ffiCall: #( void StopMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> stopSound: sound [
+Raylib_Functions class >> stopSound: sound [
 	"Stop playing a sound"
 
 	self ffiCall: #( void StopSound #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> stopSoundMulti [
+Raylib_Functions class >> stopSoundMulti [
 	"Stop any sound playing (using multichannel buffer pool)"
 
 	self ffiCall: #( void StopSoundMulti #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> swapScreenBuffer [
+Raylib_Functions class >> swapScreenBuffer [
 	"Swap back buffer with front buffer (screen drawing)"
 
 	self ffiCall: #( void SwapScreenBuffer #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> takeScreenshot: fileName [
+Raylib_Functions class >> takeScreenshot: fileName [
 	"Takes a screenshot of current screen (filename extension defines format)"
 
 	self ffiCall: #( void TakeScreenshot #( const char * fileName ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textAppend: text append: append position: position [
+Raylib_Functions class >> textAppend: text append: append position: position [
 	"Append text at specific position and move cursor!"
 
 	self ffiCall:
@@ -3374,14 +3374,14 @@ RaylibFunctions class >> textAppend: text append: append position: position [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textCopy: dst src: src [
+Raylib_Functions class >> textCopy: dst src: src [
 	"Copy one string to another, returns bytes copied"
 
 	^ self ffiCall: #( int TextCopy #( char * dst , const char * src ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textFindIndex: text find: find [
+Raylib_Functions class >> textFindIndex: text find: find [
 	"Find first text occurrence within a string"
 
 	^ self ffiCall:
@@ -3389,7 +3389,7 @@ RaylibFunctions class >> textFindIndex: text find: find [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textInsert: text insert: insert position: position [
+Raylib_Functions class >> textInsert: text insert: insert position: position [
 	"Insert text in a position (memory must be freed!)"
 
 	^ self ffiCall:
@@ -3398,7 +3398,7 @@ RaylibFunctions class >> textInsert: text insert: insert position: position [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textIsEqual: text1 text2: text2 [
+Raylib_Functions class >> textIsEqual: text1 text2: text2 [
 	"Check if two text string are equal"
 
 	^ self ffiCall:
@@ -3406,7 +3406,7 @@ RaylibFunctions class >> textIsEqual: text1 text2: text2 [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textJoin: textList count: count delimiter: delimiter [
+Raylib_Functions class >> textJoin: textList count: count delimiter: delimiter [
 	"Join text strings with delimiter"
 
 	^ self ffiCall:
@@ -3415,14 +3415,14 @@ RaylibFunctions class >> textJoin: textList count: count delimiter: delimiter [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textLength: text [
+Raylib_Functions class >> textLength: text [
 	"Get text length, checks for '\0' ending"
 
 	^ self ffiCall: #( unsigned int TextLength #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textReplace: text replace: replace by: by [
+Raylib_Functions class >> textReplace: text replace: replace by: by [
 	"Replace text string (memory must be freed!)"
 
 	^ self ffiCall:
@@ -3431,7 +3431,7 @@ RaylibFunctions class >> textReplace: text replace: replace by: by [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textSplit: text delimiter: delimiter count: count [
+Raylib_Functions class >> textSplit: text delimiter: delimiter count: count [
 	"Split text into multiple strings"
 
 	^ self ffiCall:
@@ -3440,7 +3440,7 @@ RaylibFunctions class >> textSplit: text delimiter: delimiter count: count [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textSubtext: text position: position length: length [
+Raylib_Functions class >> textSubtext: text position: position length: length [
 	"Get a piece of a text string"
 
 	^ self ffiCall:
@@ -3449,35 +3449,35 @@ RaylibFunctions class >> textSubtext: text position: position length: length [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textToInteger: text [
+Raylib_Functions class >> textToInteger: text [
 	"Get integer value from text (negative values not supported)"
 
 	^ self ffiCall: #( int TextToInteger #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textToLower: text [
+Raylib_Functions class >> textToLower: text [
 	"Get lower case version of provided string"
 
 	^ self ffiCall: #( const char * TextToLower #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textToPascal: text [
+Raylib_Functions class >> textToPascal: text [
 	"Get Pascal case notation version of provided string"
 
 	^ self ffiCall: #( const char * TextToPascal #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textToUpper: text [
+Raylib_Functions class >> textToUpper: text [
 	"Get upper case version of provided string"
 
 	^ self ffiCall: #( const char * TextToUpper #( const char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> textToUtf8: codepoints length: length [
+Raylib_Functions class >> textToUtf8: codepoints length: length [
 	"Encode text codepoint into utf8 text (memory must be freed!)"
 
 	^ self ffiCall:
@@ -3485,49 +3485,49 @@ RaylibFunctions class >> textToUtf8: codepoints length: length [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> toggleFullscreen [
+Raylib_Functions class >> toggleFullscreen [
 	"Toggle window state: fullscreen/windowed (only PLATFORM_DESKTOP)"
 
 	self ffiCall: #( void ToggleFullscreen #( void ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadAudioStream: stream [
+Raylib_Functions class >> unloadAudioStream: stream [
 	"Unload audio stream and free memory"
 
 	self ffiCall: #( void UnloadAudioStream #( AudioStream stream ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadCodepoints: codepoints [
+Raylib_Functions class >> unloadCodepoints: codepoints [
 	"Unload codepoints data from memory"
 
 	self ffiCall: #( void UnloadCodepoints #( int * codepoints ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadFileData: data [
+Raylib_Functions class >> unloadFileData: data [
 	"Unload file data allocated by LoadFileData()"
 
 	self ffiCall: #( void UnloadFileData #( unsigned char * data ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadFileText: text [
+Raylib_Functions class >> unloadFileText: text [
 	"Unload file text data allocated by LoadFileText()"
 
 	self ffiCall: #( void UnloadFileText #( char * text ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadFont: font [
+Raylib_Functions class >> unloadFont: font [
 	"Unload Font from GPU memory (VRAM)"
 
 	self ffiCall: #( void UnloadFont #( Font font ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadFontData: chars charsCount: charsCount [
+Raylib_Functions class >> unloadFontData: chars charsCount: charsCount [
 	"Unload font chars info data (RAM)"
 
 	self ffiCall:
@@ -3535,49 +3535,49 @@ RaylibFunctions class >> unloadFontData: chars charsCount: charsCount [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadImage: image [
+Raylib_Functions class >> unloadImage: image [
 	"Unload image from CPU memory (RAM)"
 
 	^ self ffiCall: #( void UnloadImage #( Image image ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadImageColors: colors [
+Raylib_Functions class >> unloadImageColors: colors [
 	"Unload color data loaded with LoadImageColors()"
 
 	self ffiCall: #( void UnloadImageColors #( Color * colors ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadImagePalette: colors [
+Raylib_Functions class >> unloadImagePalette: colors [
 	"Unload colors palette loaded with LoadImagePalette()"
 
 	self ffiCall: #( void UnloadImagePalette #( Color * colors ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadMaterial: material [
+Raylib_Functions class >> unloadMaterial: material [
 	"Unload material from GPU memory (VRAM)"
 
 	self ffiCall: #( void UnloadMaterial #( Material material ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadMesh: mesh [
+Raylib_Functions class >> unloadMesh: mesh [
 	"Unload mesh data from CPU and GPU"
 
 	self ffiCall: #( void UnloadMesh #( Mesh mesh ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadModel: model [
+Raylib_Functions class >> unloadModel: model [
 	"Unload model (including meshes) from memory (RAM and/or VRAM)"
 
 	self ffiCall: #( void UnloadModel #( Model model ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadModelAnimation: anim [
+Raylib_Functions class >> unloadModelAnimation: anim [
 	"Unload animation data"
 
 	self ffiCall: #( void UnloadModelAnimation #( ModelAnimation
@@ -3585,7 +3585,7 @@ RaylibFunctions class >> unloadModelAnimation: anim [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadModelAnimations: animation count: count [
+Raylib_Functions class >> unloadModelAnimations: animation count: count [
 	"Unload animation array data"
 
 	self ffiCall:
@@ -3594,21 +3594,21 @@ RaylibFunctions class >> unloadModelAnimations: animation count: count [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadModelKeepMeshes: model [
+Raylib_Functions class >> unloadModelKeepMeshes: model [
 	"Unload model (but not meshes) from memory (RAM and/or VRAM)"
 
 	self ffiCall: #( void UnloadModelKeepMeshes #( Model model ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadMusicStream: music [
+Raylib_Functions class >> unloadMusicStream: music [
 	"Unload music stream"
 
 	self ffiCall: #( void UnloadMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadRenderTexture: target [
+Raylib_Functions class >> unloadRenderTexture: target [
 	"Unload render texture from GPU memory (VRAM)"
 
 	self ffiCall:
@@ -3616,28 +3616,28 @@ RaylibFunctions class >> unloadRenderTexture: target [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadShader: shader [
+Raylib_Functions class >> unloadShader: shader [
 	"Unload shader from GPU memory (VRAM)"
 
 	self ffiCall: #( void UnloadShader #( Shader shader ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadSound: sound [
+Raylib_Functions class >> unloadSound: sound [
 	"Unload sound"
 
 	self ffiCall: #( void UnloadSound #( Sound sound ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadTexture: texture [
+Raylib_Functions class >> unloadTexture: texture [
 	"Unload texture from GPU memory (VRAM)"
 
 	self ffiCall: #( void UnloadTexture #( Texture2D texture ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadVrStereoConfig: config [
+Raylib_Functions class >> unloadVrStereoConfig: config [
 	"Unload VR stereo config"
 
 	self ffiCall:
@@ -3645,21 +3645,21 @@ RaylibFunctions class >> unloadVrStereoConfig: config [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadWave: wave [
+Raylib_Functions class >> unloadWave: wave [
 	"Unload wave data"
 
 	self ffiCall: #( void UnloadWave #( Wave wave ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> unloadWaveSamples: samples [
+Raylib_Functions class >> unloadWaveSamples: samples [
 	"Unload samples data loaded with LoadWaveSamples()"
 
 	self ffiCall: #( void UnloadWaveSamples #( float * samples ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateAudioStream: stream data: data samplesCount: samplesCount [
+Raylib_Functions class >> updateAudioStream: stream data: data samplesCount: samplesCount [
 	"Update audio stream buffers with data"
 
 	self ffiCall:
@@ -3668,14 +3668,14 @@ RaylibFunctions class >> updateAudioStream: stream data: data samplesCount: samp
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateCamera: camera [
+Raylib_Functions class >> updateCamera: camera [
 	"Update camera position for selected mode"
 
 	self ffiCall: #( void UpdateCamera #( Camera * camera ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateMeshBuffer: mesh index: index data: data dataSize: dataSize offset: offset [
+Raylib_Functions class >> updateMeshBuffer: mesh index: index data: data dataSize: dataSize offset: offset [
 	"Update mesh vertex data in GPU for a specific buffer index"
 
 	self ffiCall:
@@ -3684,7 +3684,7 @@ RaylibFunctions class >> updateMeshBuffer: mesh index: index data: data dataSize
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateModelAnimation: model anim: anim frame: frame [
+Raylib_Functions class >> updateModelAnimation: model anim: anim frame: frame [
 	"Update model animation pose"
 
 	self ffiCall:
@@ -3693,14 +3693,14 @@ RaylibFunctions class >> updateModelAnimation: model anim: anim frame: frame [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateMusicStream: music [
+Raylib_Functions class >> updateMusicStream: music [
 	"Updates buffers for music streaming"
 
 	self ffiCall: #( void UpdateMusicStream #( Music music ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateSound: sound data: data samplesCount: samplesCount [
+Raylib_Functions class >> updateSound: sound data: data samplesCount: samplesCount [
 	"Update sound buffer with new data"
 
 	self ffiCall:
@@ -3708,7 +3708,7 @@ RaylibFunctions class >> updateSound: sound data: data samplesCount: samplesCoun
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateTexture: texture pixels: pixels [
+Raylib_Functions class >> updateTexture: texture pixels: pixels [
 	"Update GPU texture with new data"
 
 	self ffiCall:
@@ -3716,7 +3716,7 @@ RaylibFunctions class >> updateTexture: texture pixels: pixels [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> updateTextureRec: texture rec: rec pixels: pixels [
+Raylib_Functions class >> updateTextureRec: texture rec: rec pixels: pixels [
 	"Update GPU texture rectangle with new data"
 
 	self ffiCall:
@@ -3725,28 +3725,28 @@ RaylibFunctions class >> updateTextureRec: texture rec: rec pixels: pixels [
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> uploadMesh: mesh dynamic: dynamic [
+Raylib_Functions class >> uploadMesh: mesh dynamic: dynamic [
 	"Upload mesh vertex data in GPU and provide VAO/VBO ids"
 
 	self ffiCall: #( void UploadMesh #( Mesh * mesh , bool dynamic ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> waitTime: ms [
+Raylib_Functions class >> waitTime: ms [
 	"Wait for some milliseconds (halt program execution)"
 
 	self ffiCall: #( void WaitTime #( float ms ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> waveCopy: wave [
+Raylib_Functions class >> waveCopy: wave [
 	"Copy a wave to a new wave"
 
 	^ self ffiCall: #( Wave WaveCopy #( Wave wave ) )
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> waveCrop: wave initSample: initSample finalSample: finalSample [
+Raylib_Functions class >> waveCrop: wave initSample: initSample finalSample: finalSample [
 	"Crop a wave to defined samples range"
 
 	self ffiCall:
@@ -3754,7 +3754,7 @@ RaylibFunctions class >> waveCrop: wave initSample: initSample finalSample: fina
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> waveFormat: wave sampleRate: sampleRate sampleSize: sampleSize channels: channels [
+Raylib_Functions class >> waveFormat: wave sampleRate: sampleRate sampleSize: sampleSize channels: channels [
 	"Convert wave data to desired format"
 
 	self ffiCall:
@@ -3763,7 +3763,7 @@ RaylibFunctions class >> waveFormat: wave sampleRate: sampleRate sampleSize: sam
 ]
 
 { #category : #'ffi-calls' }
-RaylibFunctions class >> windowShouldClose [
+Raylib_Functions class >> windowShouldClose [
 	"Check if KEY_ESCAPE pressed or Close icon pressed"
 
 	^ self ffiCall: #( bool WindowShouldClose #( void ) )

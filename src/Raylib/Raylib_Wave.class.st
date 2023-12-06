@@ -8,7 +8,7 @@ void *data;                 // Buffer data pointer
 "
 Class {
 	#name : #'Raylib_Wave',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_CHANNELS',
 		'OFFSET_DATA',

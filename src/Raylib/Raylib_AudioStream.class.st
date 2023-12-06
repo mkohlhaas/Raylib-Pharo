@@ -7,7 +7,7 @@ unsigned int channels;      // Number of channels (1-mono, 2-stereo)
 "
 Class {
 	#name : #'Raylib_AudioStream',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_BUFFER',
 		'OFFSET_CHANNELS',

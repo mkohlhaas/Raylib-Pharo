@@ -3,7 +3,7 @@ I represent helper types for FFI.
 "
 Class {
 	#name : #'Raylib_HelperTypes',
-	#superclass : #RaylibTypes,
+	#superclass : #'Raylib_Types',
 	#classVars : [
 		'Char32Array',
 		'Float2Array',

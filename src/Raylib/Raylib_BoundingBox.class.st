@@ -5,7 +5,7 @@ Vector3 max;            // Maximum vertex box-corner
 "
 Class {
 	#name : #'Raylib_BoundingBox',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_MAX',
 		'OFFSET_MIN'

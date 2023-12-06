@@ -3,7 +3,7 @@ I represent type aliases for FFI.
 "
 Class {
 	#name : #'Raylib_TypeAliases',
-	#superclass : #RaylibTypes,
+	#superclass : #'Raylib_Types',
 	#classVars : [
 		'Raylib_Quaternion',
 		'Raylib_RenderTexture2D',

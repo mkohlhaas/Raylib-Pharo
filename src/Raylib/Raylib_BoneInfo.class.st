@@ -5,7 +5,7 @@ int parent;             // Bone parent
 "
 Class {
 	#name : #'Raylib_BoneInfo',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_NAME',
 		'OFFSET_PARENT'

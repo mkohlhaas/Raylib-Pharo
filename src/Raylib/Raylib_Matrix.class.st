@@ -7,7 +7,7 @@ float m3, m7, m11, m15; // Matrix fourth row (4 components)
 "
 Class {
 	#name : #'Raylib_Matrix',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_M0',
 		'OFFSET_M1',

@@ -13,7 +13,7 @@ float chromaAbCorrection[4];    // Chromatic aberration correction parameters
 "
 Class {
 	#name : #'Raylib_VrDeviceInfo',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_CHROMAABCORRECTION',
 		'OFFSET_EYETOSCREENDISTANCE',

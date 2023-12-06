@@ -9,7 +9,7 @@ CharInfo *chars;        // Characters info data
 "
 Class {
 	#name : #'Raylib_Font',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_BASESIZE',
 		'OFFSET_CHARS',

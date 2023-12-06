@@ -14,7 +14,7 @@ Transform *bindPose;    // Bones base transformation (pose)
 "
 Class {
 	#name : #'Raylib_Model',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_MATERIALCOUNT',
 		'OFFSET_MATERIALS',

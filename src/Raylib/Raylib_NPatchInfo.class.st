@@ -9,7 +9,7 @@ int layout;             // Layout of the n-patch: 3x3, 1x3 or 3x1
 "
 Class {
 	#name : #'Raylib_NPatchInfo',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_BOTTOM',
 		'OFFSET_LAYOUT',

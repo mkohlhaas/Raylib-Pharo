@@ -11,7 +11,7 @@ float scaleIn[2];               // VR distortion scale in
 "
 Class {
 	#name : #'Raylib_VrStereoConfig',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_LEFTLENSCENTER',
 		'OFFSET_LEFTSCREENCENTER',

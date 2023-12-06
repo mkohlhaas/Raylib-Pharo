@@ -5,7 +5,7 @@ float y;                // Vector y component
 "
 Class {
 	#name : #'Raylib_Vector2',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_X',
 		'OFFSET_Y'

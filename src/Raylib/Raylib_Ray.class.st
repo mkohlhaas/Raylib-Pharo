@@ -5,7 +5,7 @@ Vector3 direction;      // Ray direction
 "
 Class {
 	#name : #'Raylib_Ray',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_DIRECTION',
 		'OFFSET_POSITION'

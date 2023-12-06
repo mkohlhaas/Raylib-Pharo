@@ -24,7 +24,7 @@ unsigned int *vboId;        // OpenGL Vertex Buffer Objects id (default vertex d
 "
 Class {
 	#name : #'Raylib_Mesh',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_ANIMNORMALS',
 		'OFFSET_ANIMVERTICES',

@@ -6,7 +6,7 @@ Texture depth;          // Depth buffer attachment texture
 "
 Class {
 	#name : #'Raylib_RenderTexture',
-	#superclass : #RaylibStructures,
+	#superclass : #'Raylib_Structures',
 	#classVars : [
 		'OFFSET_DEPTH',
 		'OFFSET_ID',

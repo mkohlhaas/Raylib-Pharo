@@ -3,7 +3,7 @@ I represent opaque types for FFI.
 "
 Class {
 	#name : #'Raylib_OpaqueTypes',
-	#superclass : #RaylibTypes,
+	#superclass : #'Raylib_Types',
 	#classVars : [
 		'AudioBuffer'
 	],
