@@ -1,22 +1,22 @@
 "
-int vertexCount;            // Number of vertices stored in arrays
-int triangleCount;          // Number of triangles stored (indexed or not)
+vertexCount: Number of vertices stored in arrays
+triangleCount: Number of triangles stored (indexed or not)
 // Default vertex data
-float *vertices;            // Vertex position (XYZ - 3 components per vertex) (shader-location = 0)
-float *texcoords;           // Vertex texture coordinates (UV - 2 components per vertex) (shader-location = 1)
-float *texcoords2;          // Vertex second texture coordinates (useful for lightmaps) (shader-location = 5)
-float *normals;             // Vertex normals (XYZ - 3 components per vertex) (shader-location = 2)
-float *tangents;            // Vertex tangents (XYZW - 4 components per vertex) (shader-location = 4)
-unsigned char *colors;      // Vertex colors (RGBA - 4 components per vertex) (shader-location = 3)
-unsigned short *indices;    // Vertex indices (in case vertex data comes indexed)
+vertices: Vertex position (XYZ - 3 components per vertex) (shader-location = 0)
+texcoords: Vertex texture coordinates (UV - 2 components per vertex) (shader-location = 1)
+texcoords2: Vertex second texture coordinates (useful for lightmaps) (shader-location = 5)
+normals: Vertex normals (XYZ - 3 components per vertex) (shader-location = 2)
+tangents: Vertex tangents (XYZW - 4 components per vertex) (shader-location = 4)
+colors: Vertex colors (RGBA - 4 components per vertex) (shader-location = 3)
+indices: Vertex indices (in case vertex data comes indexed)
 // Animation vertex data
-float *animVertices;        // Animated vertex positions (after bones transformations)
-float *animNormals;         // Animated normals (after bones transformations)
-int *boneIds;               // Vertex bone ids, up to 4 bones influence by vertex (skinning)
-float *boneWeights;         // Vertex bone weight, up to 4 bones influence by vertex (skinning)
+animVertices: Animated vertex positions (after bones transformations)
+animNormals: Animated normals (after bones transformations)
+boneIds: Vertex bone ids, up to 4 bones influence by vertex (skinning)
+boneWeights: Vertex bone weight, up to 4 bones influence by vertex (skinning)
 // OpenGL identifiers
-unsigned int vaoId;         // OpenGL Vertex Array Object id
-unsigned int *vboId;        // OpenGL Vertex Buffer Objects id (default vertex data)
+vaoId: OpenGL Vertex Array Object id
+vboId: OpenGL Vertex Buffer Objects id (default vertex data)
 "
 Class {
 	#name : #'Raylib_Mesh',
