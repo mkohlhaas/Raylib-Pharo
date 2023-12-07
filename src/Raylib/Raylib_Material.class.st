@@ -1,7 +1,7 @@
 "
-Shader shader;          // Material shader
-MaterialMap *maps;      // Material maps array (MAX_MATERIAL_MAPS)
-float params[4];        // Material generic parameters (if required)
+shader: Material shader
+maps: Material maps array (MAX_MATERIAL_MAPS)
+params: Material generic parameters (if required)
 "
 Class {
 	#name : #'Raylib_Material',
