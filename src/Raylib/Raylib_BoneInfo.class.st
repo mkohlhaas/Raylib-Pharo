@@ -1,6 +1,6 @@
 "
-char name[32];          // Bone name
-int parent;             // Bone parent
+name: Bone name
+parent: Bone parent
 "
 Class {
 	#name : #'Raylib_BoneInfo',
