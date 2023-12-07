@@ -1,6 +1,5 @@
 "
 Trace log level organized by priority level.
-
 "
 Class {
 	#name : #'Raylib_TraceLogLevel',
