@@ -19,7 +19,7 @@ getCodepoint -> pointer needs allocation?
 "
 Class {
 	#name : #'Raylib_Functions',
-	#superclass : #FFILibrary,
+	#superclass : #Object,
 	#pools : [
 		'Raylib_HelperTypes',
 		'Raylib_OpaqueTypes',
@@ -1133,6 +1133,12 @@ Raylib_Functions class >> fade: color alpha: alpha [
 	"Get color with alpha applied, alpha goes from 0.0f to 1.0f"
 
 	^ self ffiCall: #( Color Fade #( Color color , float alpha ) )
+]
+
+{ #category : #accessing }
+Raylib_Functions class >> ffiLibrary [
+
+	^ Raylib_Lib
 ]
 
 { #category : #'ffi-calls' }
@@ -3767,22 +3773,4 @@ Raylib_Functions class >> windowShouldClose [
 	"Check if KEY_ESCAPE pressed or Close icon pressed"
 
 	^ self ffiCall: #( bool WindowShouldClose #( void ) )
-]
-
-{ #category : #'as yet unclassified' }
-Raylib_Functions >> macModuleName [
-
-	^ 'libraylib.dylib'
-]
-
-{ #category : #'accessing - platform' }
-Raylib_Functions >> unixModuleName [
-
-	^ 'libraylib.so'
-]
-
-{ #category : #'as yet unclassified' }
-Raylib_Functions >> win32ModuleName [
-
-	^ 'raylib.dll'
 ]
