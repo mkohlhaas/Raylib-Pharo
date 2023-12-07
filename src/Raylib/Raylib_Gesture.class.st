@@ -1,7 +1,6 @@
 "
 Gestures.
 It could be used as flags to enable only some gestures.
-
 "
 Class {
 	#name : #'Raylib_Gesture',
