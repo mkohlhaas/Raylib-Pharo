@@ -3768,3 +3768,21 @@ Raylib_Functions class >> windowShouldClose [
 
 	^ self ffiCall: #( bool WindowShouldClose #( void ) )
 ]
+
+{ #category : #'as yet unclassified' }
+Raylib_Functions >> macModuleName [
+
+	^ 'libraylib.dylib'
+]
+
+{ #category : #'accessing - platform' }
+Raylib_Functions >> unixModuleName [
+
+	^ 'libraylib.so'
+]
+
+{ #category : #'as yet unclassified' }
+Raylib_Functions >> win32ModuleName [
+
+	^ 'raylib.dll'
+]
