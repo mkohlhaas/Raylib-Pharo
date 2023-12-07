@@ -1,9 +1,9 @@
 "
-AudioStream stream;         // Audio stream
-unsigned int sampleCount;   // Total number of samples
-bool looping;               // Music looping enable
-int ctxType;                // Type of music context (audio filetype)
-void *ctxData;              // Audio context data, depends on type
+stream: Audio stream
+sampleCount: Total number of samples
+looping: Music looping enable
+ctxType: Type of music context (audio filetype)
+ctxData: Audio context data, depends on type
 "
 Class {
 	#name : #'Raylib_Music',
