@@ -1,10 +1,10 @@
 "
-int baseSize;           // Base size (default chars height)
-int charsCount;         // Number of characters
-int charsPadding;       // Padding around the chars
-Texture2D texture;      // Characters texture atlas
-Rectangle *recs;        // Characters rectangles in texture
-CharInfo *chars;        // Characters info data
+baseSize: Base size (default chars height)
+charsCount: Number of characters
+charsPadding: Padding around the chars
+texture: Characters texture atlas
+recs: Characters rectangles in texture
+chars: Characters info data
 "
 Class {
 	#name : #'Raylib_Font',
