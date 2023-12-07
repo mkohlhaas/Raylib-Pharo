@@ -1,7 +1,6 @@
 "
 Vector3 position;       // Ray position (origin)
 Vector3 direction;      // Ray direction
-
 "
 Class {
 	#name : #'Raylib_Ray',
