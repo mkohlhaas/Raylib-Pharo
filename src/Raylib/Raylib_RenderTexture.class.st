@@ -1,7 +1,7 @@
 "
-unsigned int id;        // OpenGL framebuffer object id
-Texture texture;        // Color buffer attachment texture
-Texture depth;          // Depth buffer attachment texture
+id: OpenGL framebuffer object id
+texture: Color buffer attachment texture
+depth: Depth buffer attachment texture
 "
 Class {
 	#name : #'Raylib_RenderTexture',
