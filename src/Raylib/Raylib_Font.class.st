@@ -5,7 +5,6 @@ int charsPadding;       // Padding around the chars
 Texture2D texture;      // Characters texture atlas
 Rectangle *recs;        // Characters rectangles in texture
 CharInfo *chars;        // Characters info data
-
 "
 Class {
 	#name : #'Raylib_Font',
