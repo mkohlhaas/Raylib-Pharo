@@ -4,7 +4,6 @@ unsigned int sampleCount;   // Total number of samples
 bool looping;               // Music looping enable
 int ctxType;                // Type of music context (audio filetype)
 void *ctxData;              // Audio context data, depends on type
-
 "
 Class {
 	#name : #'Raylib_Music',
