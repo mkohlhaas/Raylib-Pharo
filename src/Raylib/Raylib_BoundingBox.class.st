@@ -1,6 +1,6 @@
 "
-Vector3 min;            // Minimum vertex box-corner
-Vector3 max;            // Maximum vertex box-corner
+min: Minimum vertex box-corner
+max: Maximum vertex box-corner
 "
 Class {
 	#name : #'Raylib_BoundingBox',
