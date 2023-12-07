@@ -1,14 +1,14 @@
 "
-Matrix transform;       // Local transform matrix
-int meshCount;          // Number of meshes
-int materialCount;      // Number of materials
-Mesh *meshes;           // Meshes array
-Material *materials;    // Materials array
-int *meshMaterial;      // Mesh material number
+transform: Local transform matrix
+meshCount: Number of meshes
+materialCount: Number of materials
+meshes: Meshes array
+materials: Materials array
+meshMaterial: Mesh material number
 // Animation data
-int boneCount;          // Number of bones
-BoneInfo *bones;        // Bones information (skeleton)
-Transform *bindPose;    // Bones base transformation (pose)
+boneCount: Number of bones
+bones: Bones information (skeleton)
+bindPose: Bones base transformation (pose)
 "
 Class {
 	#name : #'Raylib_Model',
