@@ -2,7 +2,6 @@
 Texture parameters: filter mode.
 Filtering considers mipmaps if available in the texture.
 Filter is accordingly set for minification and magnification.
-
 "
 Class {
 	#name : #'Raylib_TextureFilter',
