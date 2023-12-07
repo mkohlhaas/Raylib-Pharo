@@ -20,7 +20,7 @@ Class {
 RLAudioStream class >> fieldsDesc [
 
 	^ #(
-        AudioBuffer *buffer;
+        RLAudioBuffer *buffer;
         uint sampleRate;
         uint sampleSize;
         uint channels;

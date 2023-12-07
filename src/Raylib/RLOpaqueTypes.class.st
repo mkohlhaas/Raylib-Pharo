@@ -5,7 +5,7 @@ Class {
 	#name : #RLOpaqueTypes,
 	#superclass : #RLTypes,
 	#classVars : [
-		'AudioBuffer'
+		'RLAudioBuffer'
 	],
 	#category : #Raylib
 }
@@ -13,5 +13,5 @@ Class {
 { #category : #'class initialization' }
 RLOpaqueTypes class >> initialize [
 
-	AudioBuffer := #FFIOpaqueObject
+	RLAudioBuffer := #FFIOpaqueObject
 ]

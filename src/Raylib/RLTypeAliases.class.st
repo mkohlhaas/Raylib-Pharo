@@ -5,10 +5,10 @@ Class {
 	#name : #RLTypeAliases,
 	#superclass : #RLTypes,
 	#classVars : [
-		'Raylib_Quaternion',
-		'Raylib_RenderTexture2D',
-		'Raylib_Texture2D',
-		'Raylib_TextureCubemap'
+		'RLQuaternion',
+		'RLRenderTexture2D',
+		'RLTexture2D',
+		'RLTextureCubemap'
 	],
 	#category : #Raylib
 }
@@ -16,8 +16,8 @@ Class {
 { #category : #'class initialization' }
 RLTypeAliases class >> initialize [
 
-	Raylib_Texture2D := RLTexture.
-	Raylib_TextureCubemap := RLTexture.
-	Raylib_RenderTexture2D := RLRenderTexture.
-	Raylib_Quaternion := RLVector4
+	RLTexture2D := RLTexture.
+	RLTextureCubemap := RLTexture.
+	RLRenderTexture2D := RLRenderTexture.
+	RLQuaternion := RLVector4
 ]
