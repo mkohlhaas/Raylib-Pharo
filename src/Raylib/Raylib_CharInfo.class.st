@@ -4,7 +4,6 @@ int offsetX;            // Character offset X when drawing
 int offsetY;            // Character offset Y when drawing
 int advanceX;           // Character advance position X
 Image image;            // Character image data
-
 "
 Class {
 	#name : #'Raylib_CharInfo',
