@@ -1,9 +1,9 @@
 "
-unsigned int id;        // OpenGL texture id
-int width;              // Texture base width
-int height;             // Texture base height
-int mipmaps;            // Mipmap levels, 1 by default
-int format;             // Data format (PixelFormat type)
+id: OpenGL texture id
+width: Texture base width
+height: Texture base height
+mipmaps: Mipmap levels, 1 by default
+format: Data format (PixelFormat type)
 "
 Class {
 	#name : #'Raylib_Texture',
