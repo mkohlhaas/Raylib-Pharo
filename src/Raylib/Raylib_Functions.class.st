@@ -19,7 +19,7 @@ getCodepoint -> pointer needs allocation?
 "
 Class {
 	#name : #'Raylib_Functions',
-	#superclass : #Object,
+	#superclass : #FFILibrary,
 	#pools : [
 		'Raylib_HelperTypes',
 		'Raylib_OpaqueTypes',
