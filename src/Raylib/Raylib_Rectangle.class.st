@@ -3,7 +3,6 @@ float x;                // Rectangle top-left corner position x
 float y;                // Rectangle top-left corner position y
 float width;            // Rectangle width
 float height;           // Rectangle height
-
 "
 Class {
 	#name : #'Raylib_Rectangle',
