@@ -13,6 +13,12 @@ Raylib_Lib >> macModuleName [
 	^ 'libraylib.dylib'
 ]
 
+{ #category : #accessing }
+Raylib_Lib >> runner [
+
+	^ TFMainThreadRunner uniqueInstance
+]
+
 { #category : #'accessing - platform' }
 Raylib_Lib >> unixModuleName [
 
