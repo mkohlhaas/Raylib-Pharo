@@ -16,7 +16,7 @@ RLLib >> macModuleName [
 { #category : #accessing }
 RLLib >> runner [
 
-	^ TFMainThreadRunner uniqueInstance
+	^ TFSameThreadRunner uniqueInstance
 ]
 
 { #category : #'accessing - platform' }
