@@ -1,8 +1,8 @@
 "
-Vector2 offset;         // Camera offset (displacement from target)
-Vector2 target;         // Camera target (rotation and zoom origin)
-float rotation;         // Camera rotation in degrees
-float zoom;             // Camera zoom (scaling), should be 1.0f by default
+offset: Camera offset (displacement from target)
+target: Camera target (rotation and zoom origin)
+rotation: Camera rotation in degrees
+zoom: Camera zoom (scaling), should be 1.0f by default
 "
 Class {
 	#name : #'Raylib_Camera2D',
