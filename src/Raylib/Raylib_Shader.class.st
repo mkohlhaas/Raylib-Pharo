@@ -1,7 +1,6 @@
 "
 unsigned int id;        // Shader program id
 int *locs;              // Shader locations array (MAX_SHADER_LOCATIONS)
-
 "
 Class {
 	#name : #'Raylib_Shader',
