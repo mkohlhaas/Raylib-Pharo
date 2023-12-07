@@ -1,6 +1,5 @@
 "
 Custom Raylib color palette for amazing visuals on WHITE background.
-
 "
 Class {
 	#name : #'Raylib_Colors',
