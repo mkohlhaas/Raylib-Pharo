@@ -2,7 +2,6 @@
 Texture2D texture;      // Material map texture
 Color color;            // Material map color
 float value;            // Material map value
-
 "
 Class {
 	#name : #'Raylib_MaterialMap',
