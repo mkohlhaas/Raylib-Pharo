@@ -1,7 +1,7 @@
 "
-float x;                // Vector x component
-float y;                // Vector y component
-float z;                // Vector z component
+x: Vector x component
+y: Vector y component
+z: Vector z component
 "
 Class {
 	#name : #'Raylib_Vector3',
