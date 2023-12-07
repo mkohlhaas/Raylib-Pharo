@@ -3,7 +3,6 @@ bool hit;               // Did the ray hit something?
 float distance;         // Distance to nearest hit
 Vector3 point;          // Point of nearest hit
 Vector3 normal;         // Surface normal of hit
-
 "
 Class {
 	#name : #'Raylib_RayCollision',
