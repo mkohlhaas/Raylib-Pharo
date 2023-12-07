@@ -1,10 +1,10 @@
 "
-Rectangle source;       // Texture source rectangle
-int left;               // Left border offset
-int top;                // Top border offset
-int right;              // Right border offset
-int bottom;             // Bottom border offset
-int layout;             // Layout of the n-patch: 3x3, 1x3 or 3x1
+source: Texture source rectangle
+left: Left border offset
+top: Top border offset
+right: Right border offset
+bottom: Bottom border offset
+layout: Layout of the n-patch: 3x3, 1x3 or 3x1
 "
 Class {
 	#name : #'Raylib_NPatchInfo',
