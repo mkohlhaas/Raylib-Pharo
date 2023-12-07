@@ -1,6 +1,6 @@
 "
-AudioStream stream;         // Audio stream
-unsigned int sampleCount;   // Total number of samples
+stream: Audio stream
+sampleCount: Total number of samples
 "
 Class {
 	#name : #'Raylib_Sound',
