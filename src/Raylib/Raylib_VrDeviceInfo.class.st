@@ -9,7 +9,6 @@ float lensSeparationDistance;   // Lens separation distance in meters
 float interpupillaryDistance;   // IPD (distance between pupils) in meters
 float lensDistortionValues[4];  // Lens distortion constant parameters
 float chromaAbCorrection[4];    // Chromatic aberration correction parameters
-
 "
 Class {
 	#name : #'Raylib_VrDeviceInfo',
