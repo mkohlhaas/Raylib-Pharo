@@ -1,9 +1,9 @@
 "
-int value;              // Character value (Unicode)
-int offsetX;            // Character offset X when drawing
-int offsetY;            // Character offset Y when drawing
-int advanceX;           // Character advance position X
-Image image;            // Character image data
+value: Character value (Unicode)
+offsetX: Character offset X when drawing
+offsetY: Character offset Y when drawing
+advanceX: Character advance position X
+image: Character image data
 "
 Class {
 	#name : #'Raylib_CharInfo',
