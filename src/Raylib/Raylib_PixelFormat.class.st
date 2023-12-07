@@ -1,7 +1,6 @@
 "
 Pixel formats.
 Support depends on OpenGL version and platform.
-
 "
 Class {
 	#name : #'Raylib_PixelFormat',
