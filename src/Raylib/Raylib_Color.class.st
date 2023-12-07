@@ -1,8 +1,8 @@
 "
-unsigned char r;        // Color red value
-unsigned char g;        // Color green value
-unsigned char b;        // Color blue value
-unsigned char a;        // Color alpha value
+r: Color red value
+g: Color green value
+b: Color blue value
+a: Color alpha value
 "
 Class {
 	#name : #'Raylib_Color',
