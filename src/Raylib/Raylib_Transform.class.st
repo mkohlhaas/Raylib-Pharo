@@ -1,7 +1,7 @@
 "
-Vector3 translation;    // Translation
-Quaternion rotation;    // Rotation
-Vector3 scale;          // Scale
+translation: Translation
+rotation: Rotation
+scale: Scale
 "
 Class {
 	#name : #'Raylib_Transform',
