@@ -1,8 +1,8 @@
 "
-float x;                // Vector x component
-float y;                // Vector y component
-float z;                // Vector z component
-float w;                // Vector w component
+x: Vector x component
+y: Vector y component
+z: Vector z component
+w: Vector w component
 "
 Class {
 	#name : #'Raylib_Vector4',
