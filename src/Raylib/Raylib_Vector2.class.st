@@ -1,7 +1,6 @@
 "
 float x;                // Vector x component
 float y;                // Vector y component
-
 "
 Class {
 	#name : #'Raylib_Vector2',
