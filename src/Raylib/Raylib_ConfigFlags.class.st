@@ -2,7 +2,6 @@
 System/Window config flags.
 Every bit registers one state (use it with bit masks).
 By default all flags are set to 0.
-
 "
 Class {
 	#name : #'Raylib_ConfigFlags',
