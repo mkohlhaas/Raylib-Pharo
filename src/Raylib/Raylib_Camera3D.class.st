@@ -1,9 +1,9 @@
 "
-Vector3 position;       // Camera position
-Vector3 target;         // Camera target it looks-at
-Vector3 up;             // Camera up vector (rotation over its axis)
-float fovy;             // Camera field-of-view apperture in Y (degrees) in perspective, used as near plane width in orthographic
-int projection;         // Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHOGRAPHIC
+position: Camera position
+target: Camera target it looks-at
+up: Camera up vector (rotation over its axis)
+fovy: Camera field-of-view apperture in Y (degrees) in perspective, used as near plane width in orthographic
+projection: Camera projection: CAMERA_PERSPECTIVE or CAMERA_ORTHOGRAPHIC
 "
 Class {
 	#name : #'Raylib_Camera3D',
