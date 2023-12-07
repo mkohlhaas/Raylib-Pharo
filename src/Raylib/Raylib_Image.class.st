@@ -1,9 +1,9 @@
 "
-void *data;             // Image raw data
-int width;              // Image base width
-int height;             // Image base height
-int mipmaps;            // Mipmap levels, 1 by default
-int format;             // Data format (PixelFormat type)
+data: Image raw data
+width: Image base width
+height: Image base height
+mipmaps: Mipmap levels, 1 by default
+format: Data format (PixelFormat type)
 "
 Class {
 	#name : #'Raylib_Image',
