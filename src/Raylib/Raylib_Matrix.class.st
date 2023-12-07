@@ -1,8 +1,8 @@
 "
-float m0, m4, m8, m12;  // Matrix first row (4 components)
-float m1, m5, m9, m13;  // Matrix second row (4 components)
-float m2, m6, m10, m14; // Matrix third row (4 components)
-float m3, m7, m11, m15; // Matrix fourth row (4 components)
+m0, m4, m8, m12: Matrix first row (4 components)
+m1, m5, m9, m13: Matrix second row (4 components)
+m2, m6, m10, m14: Matrix third row (4 components)
+m3, m7, m11, m15: Matrix fourth row (4 components)
 "
 Class {
 	#name : #'Raylib_Matrix',
