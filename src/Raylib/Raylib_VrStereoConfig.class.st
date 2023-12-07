@@ -7,7 +7,6 @@ float leftScreenCenter[2];      // VR left screen center
 float rightScreenCenter[2];     // VR right screen center
 float scale[2];                 // VR distortion scale
 float scaleIn[2];               // VR distortion scale in
-
 "
 Class {
 	#name : #'Raylib_VrStereoConfig',
