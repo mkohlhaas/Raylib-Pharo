@@ -1,7 +1,6 @@
 "
 int vertexCount;            // Number of vertices stored in arrays
 int triangleCount;          // Number of triangles stored (indexed or not)
-
 // Default vertex data
 float *vertices;            // Vertex position (XYZ - 3 components per vertex) (shader-location = 0)
 float *texcoords;           // Vertex texture coordinates (UV - 2 components per vertex) (shader-location = 1)
@@ -10,17 +9,14 @@ float *normals;             // Vertex normals (XYZ - 3 components per vertex) (s
 float *tangents;            // Vertex tangents (XYZW - 4 components per vertex) (shader-location = 4)
 unsigned char *colors;      // Vertex colors (RGBA - 4 components per vertex) (shader-location = 3)
 unsigned short *indices;    // Vertex indices (in case vertex data comes indexed)
-
 // Animation vertex data
 float *animVertices;        // Animated vertex positions (after bones transformations)
 float *animNormals;         // Animated normals (after bones transformations)
 int *boneIds;               // Vertex bone ids, up to 4 bones influence by vertex (skinning)
 float *boneWeights;         // Vertex bone weight, up to 4 bones influence by vertex (skinning)
-
 // OpenGL identifiers
 unsigned int vaoId;         // OpenGL Vertex Array Object id
 unsigned int *vboId;        // OpenGL Vertex Buffer Objects id (default vertex data)
-
 "
 Class {
 	#name : #'Raylib_Mesh',
