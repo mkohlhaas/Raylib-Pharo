@@ -4,7 +4,6 @@ int width;              // Image base width
 int height;             // Image base height
 int mipmaps;            // Mipmap levels, 1 by default
 int format;             // Data format (PixelFormat type)
-
 "
 Class {
 	#name : #'Raylib_Image',
