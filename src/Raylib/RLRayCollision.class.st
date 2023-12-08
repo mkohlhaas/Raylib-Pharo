@@ -22,8 +22,8 @@ RLRayCollision class >> fieldsDesc [
 	^ #(
         bool hit;
         float distance;
-        #RLVector3 point;
-        #RLVector3 normal;
+        RLVector3 point;
+        RLVector3 normal;
 	   )
 ]
 

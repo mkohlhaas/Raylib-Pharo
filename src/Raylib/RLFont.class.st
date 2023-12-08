@@ -27,9 +27,9 @@ RLFont class >> fieldsDesc [
         int baseSize;
         int charsCount;
         int charsPadding;
-        Raylib_Texture2D texture;
-        #RLRectangle *recs;
-        #RLCharInfo *chars;
+        RLTexture2D texture;
+        RLRectangle *recs;
+        RLCharInfo *chars;
 	   )
 ]
 
@@ -96,11 +96,11 @@ RLFont >> recs: anObject [
 { #category : #'accessing - structure variables' }
 RLFont >> texture [
 	"This method was automatically generated"
-	^ Raylib_Texture2D fromHandle: (handle referenceStructAt: OFFSET_TEXTURE length: Raylib_Texture2D byteSize)
+	^ RLTexture fromHandle: (handle referenceStructAt: OFFSET_TEXTURE length: RLTexture byteSize)
 ]
 
 { #category : #'accessing - structure variables' }
 RLFont >> texture: anObject [
 	"This method was automatically generated"
-	handle structAt: OFFSET_TEXTURE put: anObject getHandle length: Raylib_Texture2D byteSize
+	handle structAt: OFFSET_TEXTURE put: anObject getHandle length: RLTexture byteSize
 ]

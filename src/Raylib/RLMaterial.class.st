@@ -18,8 +18,8 @@ Class {
 RLMaterial class >> fieldsDesc [
 
 	^ #(
-        #RLShader shader;
-        #RLMaterialMap *maps;
+        RLShader shader;
+        RLMaterialMap *maps;
         Float4Array params;
 	   )
 	

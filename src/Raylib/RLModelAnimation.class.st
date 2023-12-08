@@ -22,8 +22,8 @@ RLModelAnimation class >> fieldsDesc [
 	^ #(
         int boneCount;
         int frameCount;
-        #RLBoneInfo *bones;
-        #RLTransform **framePoses;
+        RLBoneInfo *bones;
+        RLTransform **framePoses;
 	   )
 ]
 

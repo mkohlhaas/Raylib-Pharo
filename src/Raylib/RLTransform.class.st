@@ -18,9 +18,9 @@ Class {
 RLTransform class >> fieldsDesc [
 
 	^ #(
-        #RLVector3 translation;
-        Raylib_Quaternion rotation;
-        #RLVector3 scale;
+        RLVector3 translation;
+        RLQuaternion rotation;
+        RLVector3 scale;
 	   )
 ]
 

@@ -16,8 +16,8 @@ Class {
 RLBoundingBox class >> fieldsDesc [
 
 	^ #(
-        #RLVector3 min;
-        #RLVector3 max;
+        RLVector3 min;
+        RLVector3 max;
 	   )
 ]
 

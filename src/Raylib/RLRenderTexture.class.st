@@ -19,8 +19,8 @@ RLRenderTexture class >> fieldsDesc [
 
 	^ #(
         uint id;
-        #RLTexture texture;
-        #RLTexture depth;
+        RLTexture texture;
+        RLTexture depth;
 	   )
 ]
 

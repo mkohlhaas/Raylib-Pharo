@@ -20,8 +20,8 @@ Class {
 RLCamera2D class >> fieldsDesc [
 
 	^ #(
-        #RLVector2 offset;
-        #RLVector2 target;
+        RLVector2 offset;
+        RLVector2 target;
         float rotation;
         float zoom;
       )

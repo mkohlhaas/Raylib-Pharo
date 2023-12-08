@@ -22,7 +22,7 @@ Class {
 RLMusic class >> fieldsDesc [
 
 	^ #(
-        #RLAudioStream stream;
+        RLAudioStream stream;
         uint sampleCount;
         bool looping;
         int ctxType;

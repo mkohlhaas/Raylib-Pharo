@@ -16,8 +16,8 @@ Class {
 RLRay class >> fieldsDesc [
 
 	^ #(
-        #RLVector3 position;
-        #RLVector3 direction;
+        RLVector3 position;
+        RLVector3 direction;
 	   )
 ]
 

@@ -24,7 +24,7 @@ Class {
 RLNPatchInfo class >> fieldsDesc [
 
 	^ #(
-        #RLRectangle source;
+        RLRectangle source;
         int left;
         int top;
         int right;

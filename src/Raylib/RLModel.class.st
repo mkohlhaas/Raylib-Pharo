@@ -14,10 +14,14 @@ Class {
 	#name : #RLModel,
 	#superclass : #RLStructures,
 	#classVars : [
+		'OFFSET_BINDPOSE',
+		'OFFSET_BONECOUNT',
+		'OFFSET_BONES',
 		'OFFSET_MATERIALCOUNT',
 		'OFFSET_MATERIALS',
 		'OFFSET_MESHCOUNT',
 		'OFFSET_MESHES',
+		'OFFSET_MESHMATERIAL',
 		'OFFSET_TRANSFORM'
 	],
 	#category : #Raylib
@@ -27,16 +31,52 @@ Class {
 RLModel class >> fieldsDesc [
 
 	^ #(
-        #RLMatrix transform;
+        RLMatrix transform;
         int meshCount;
         int materialCount;
-        #RLMesh *meshes;
-        #RLMaterial *materials;
+        RLMesh *meshes;
+        RLMaterial *materials;
         int *meshMaterial;
         int boneCount;
-        #RLBoneInfo *bones;
-        #RLTransform *bindPose;
+        RLBoneInfo *bones;
+        RLTransform *bindPose;
 	   )
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> bindPose [
+	"This method was automatically generated"
+	^RLTransform fromHandle: (handle pointerAt: OFFSET_BINDPOSE)
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> bindPose: anObject [
+	"This method was automatically generated"
+	handle pointerAt: OFFSET_BINDPOSE put: anObject getHandle.
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> boneCount [
+	"This method was automatically generated"
+	^handle signedLongAt: OFFSET_BONECOUNT
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> boneCount: anObject [
+	"This method was automatically generated"
+	handle signedLongAt: OFFSET_BONECOUNT put: anObject
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> bones [
+	"This method was automatically generated"
+	^RLBoneInfo fromHandle: (handle pointerAt: OFFSET_BONES)
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> bones: anObject [
+	"This method was automatically generated"
+	handle pointerAt: OFFSET_BONES put: anObject getHandle.
 ]
 
 { #category : #'accessing - structure variables' }
@@ -52,6 +92,18 @@ RLModel >> materialCount: anObject [
 ]
 
 { #category : #'accessing - structure variables' }
+RLModel >> materials [
+	"This method was automatically generated"
+	^RLMaterial fromHandle: (handle pointerAt: OFFSET_MATERIALS)
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> materials: anObject [
+	"This method was automatically generated"
+	handle pointerAt: OFFSET_MATERIALS put: anObject getHandle.
+]
+
+{ #category : #'accessing - structure variables' }
 RLModel >> meshCount [
 	"This method was automatically generated"
 	^handle signedLongAt: OFFSET_MESHCOUNT
@@ -61,6 +113,18 @@ RLModel >> meshCount [
 RLModel >> meshCount: anObject [
 	"This method was automatically generated"
 	handle signedLongAt: OFFSET_MESHCOUNT put: anObject
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> meshMaterial [
+	"This method was automatically generated"
+	^ExternalData fromHandle: (handle pointerAt: OFFSET_MESHMATERIAL) type: ExternalType long asPointerType
+]
+
+{ #category : #'accessing - structure variables' }
+RLModel >> meshMaterial: anObject [
+	"This method was automatically generated"
+	handle pointerAt: OFFSET_MESHMATERIAL put: anObject getHandle.
 ]
 
 { #category : #'accessing - structure variables' }

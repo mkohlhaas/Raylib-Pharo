@@ -16,7 +16,7 @@ Class {
 RLSound class >> fieldsDesc [
 
 	^ #(
-        #RLAudioStream stream;
+        RLAudioStream stream;
         uint sampleCount;
 	   )
 ]

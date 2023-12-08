@@ -18,8 +18,8 @@ Class {
 RLMaterialMap class >> fieldsDesc [
 
 	^ #(
-        Raylib_Texture2D texture;
-        #RLColor color;
+        RLTexture2D texture;
+        RLColor color;
         float value;
 	   )
 ]
@@ -39,13 +39,13 @@ RLMaterialMap >> color: anObject [
 { #category : #'accessing - structure variables' }
 RLMaterialMap >> texture [
 	"This method was automatically generated"
-	^ Raylib_Texture2D fromHandle: (handle referenceStructAt: OFFSET_TEXTURE length: Raylib_Texture2D byteSize)
+	^ RLTexture fromHandle: (handle referenceStructAt: OFFSET_TEXTURE length: RLTexture byteSize)
 ]
 
 { #category : #'accessing - structure variables' }
 RLMaterialMap >> texture: anObject [
 	"This method was automatically generated"
-	handle structAt: OFFSET_TEXTURE put: anObject getHandle length: Raylib_Texture2D byteSize
+	handle structAt: OFFSET_TEXTURE put: anObject getHandle length: RLTexture byteSize
 ]
 
 { #category : #'accessing - structure variables' }

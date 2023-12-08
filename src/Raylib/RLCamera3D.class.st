@@ -22,9 +22,9 @@ Class {
 RLCamera3D class >> fieldsDesc [
 
 	^ #(
-        #RLVector3 position;
-        #RLVector3 target;
-        #RLVector3 up;
+        RLVector3 position;
+        RLVector3 target;
+        RLVector3 up;
         float fovy;
         int projection;
 	   )
