@@ -13,12 +13,6 @@ RLLib >> macModuleName [
 	^ 'libraylib.dylib'
 ]
 
-{ #category : #accessing }
-RLLib >> runner [
-
-	^ TFSameThreadRunner uniqueInstance
-]
-
 { #category : #'accessing - platform' }
 RLLib >> unixModuleName [
 
