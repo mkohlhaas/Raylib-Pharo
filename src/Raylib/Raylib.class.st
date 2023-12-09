@@ -1,21 +1,5 @@
 "
-isWindowState -> flags?
-setWindowState -> flags?
-getWindowHandle -> is this of any use?
-setConfigFlags -> flags?
-traceLog -> multiple functions for the different arguments
-LoadFileData -> pointer needs allocation?
-CompressData -> pointer needs allocation?
-DecompressData -> pointer needs allocation?
-GetDroppedFiles -> pointer needs allocation?
-GetDirectoryFiles -> pointer needs allocation?
-drawLineStrip -> pointer?
-drawTriangleFan -> pointer?
-checkCollisionLines -> pointer?
-getImageAlphaBorder -> uses RLRectangle!
-genImageFontAtlas -> pointers?
-textFormat -> varargs
-getCodepoint -> pointer needs allocation?
+I contain all the functions of the Raylib C library.
 "
 Class {
 	#name : #Raylib,
